@@ -8,9 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 216753003078791501, guid: 44ae72fb48495ca4481833714e603a1c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.43137258
+      objectReference: {fileID: 0}
+    - target: {fileID: 216753003078791501, guid: 44ae72fb48495ca4481833714e603a1c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.70440555
+      objectReference: {fileID: 0}
+    - target: {fileID: 216753003078791501, guid: 44ae72fb48495ca4481833714e603a1c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.90588236
+      objectReference: {fileID: 0}
     - target: {fileID: 338477189686251071, guid: 44ae72fb48495ca4481833714e603a1c, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002086951759869772, guid: 44ae72fb48495ca4481833714e603a1c, type: 3}
+      propertyPath: <RED>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2393903836526851976, guid: 44ae72fb48495ca4481833714e603a1c, type: 3}
       propertyPath: <RED>k__BackingField
@@ -22,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2437807608329541434, guid: 44ae72fb48495ca4481833714e603a1c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2437807608329541434, guid: 44ae72fb48495ca4481833714e603a1c, type: 3}
       propertyPath: m_LocalPosition.z

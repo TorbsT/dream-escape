@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteAlways]
+[SelectionBase]
 public class DimensionComponent : MonoBehaviour
 {
     [field: SerializeField] public bool RED { get; set; } = true;
