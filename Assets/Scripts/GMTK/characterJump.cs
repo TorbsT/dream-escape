@@ -38,6 +38,7 @@ public class characterJump : MonoBehaviour
     public float jumpSpeed;
     private float defaultGravityScale;
     public float gravMultiplier;
+    public float jumpSpeedFromGround;
 
     [Header("Current State")]
     public bool canJumpAgain = false;
@@ -47,6 +48,7 @@ public class characterJump : MonoBehaviour
     private bool pressingJump;
     public bool onGround;
     private bool currentlyJumping;
+    private bool calculatedJumpSpeedFromGround;
 
     void Awake()
     {
@@ -147,6 +149,17 @@ public class characterJump : MonoBehaviour
         }
 
         calculateGravity();
+
+        Invoke(nameof(TryCalculateJumpSpeed), 0.1f);
+    }
+    private void TryCalculateJumpSpeed()
+    {
+        if (!calculatedJumpSpeedFromGround && body.velocity.y == 0f && onGround)
+        {
+            jumpSpeedFromGround = CalculateJumpSpeed();
+            calculatedJumpSpeedFromGround = true;
+        }
+        else Invoke(nameof(TryCalculateJumpSpeed), 0.05f);
     }
 
     private void calculateGravity()
@@ -245,6 +258,8 @@ public class characterJump : MonoBehaviour
 
             //Apply the new jumpSpeed to the velocity. It will be sent to the Rigidbody in FixedUpdate;
             velocity.y += jumpSpeed;
+            velocity.y = 22f;
+
             currentlyJumping = true;
 
             if (juice != null)
@@ -267,7 +282,10 @@ public class characterJump : MonoBehaviour
         body.AddForce(Vector2.up * bounceAmount, ForceMode2D.Impulse);
     }
 
-
+    private float CalculateJumpSpeed()
+    {
+        return Mathf.Sqrt(-2f * Physics2D.gravity.y * body.gravityScale * jumpHeight);
+    }
 /*
 
 timeToApexStat = scale(1, 10, 0.2f, 2.5f, numberFromPlatformerToolkit)

@@ -20,8 +20,9 @@ public class Key : MonoBehaviour
     {
         foreach (var item in Receivers)
             item.Trigger();
+        //Invoke(nameof(Reactivate), 1.5f);
+        TimeStop.Instance.Stop(0.1f);
         gameObject.SetActive(false);
-        Invoke(nameof(Reactivate), 1.5f);
     }
     private void Reactivate()
     {

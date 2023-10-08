@@ -166,7 +166,6 @@ public class characterJuice : MonoBehaviour
 
     IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds, float dropAmount, bool jumpSqueeze)
     {
-        Debug.Log("Started squeeze");
         //We log that the player is squashing/stretching, so we don't do these calculations more than once
         if (jumpSqueeze) { jumpSqueezing = true; }
         else { landSqueezing = true; }
@@ -201,7 +200,6 @@ public class characterJuice : MonoBehaviour
 
         if (jumpSqueeze) { jumpSqueezing = false; }
         else { landSqueezing = false; }
-        Debug.Log("Ended squeeze");
     }
 
 }

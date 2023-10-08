@@ -124,18 +124,18 @@ public class characterMovement : MonoBehaviour
             //If the sign (i.e. positive or negative) of our input direction doesn't match our movement, it means we're turning around and so should use the turn speed stat.
             if (Mathf.Sign(directionX) != Mathf.Sign(velocity.x))
             {
-                maxSpeedChange = turnSpeed * Time.deltaTime;
+                maxSpeedChange = turnSpeed * Time.fixedDeltaTime;
             }
             else
             {
                 //If they match, it means we're simply running along and so should use the acceleration stat
-                maxSpeedChange = acceleration * Time.deltaTime;
+                maxSpeedChange = acceleration * Time.fixedDeltaTime;
             }
         }
         else
         {
             //And if we're not pressing a direction at all, use the deceleration stat
-            maxSpeedChange = deceleration * Time.deltaTime;
+            maxSpeedChange = deceleration * Time.fixedDeltaTime;
         }
 
         //Move our velocity towards the desired velocity, at the rate of the number calculated above

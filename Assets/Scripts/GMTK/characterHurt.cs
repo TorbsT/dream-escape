@@ -42,13 +42,13 @@ public class characterHurt : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //If the player hits layer 7 (saw blade) or 8 (spikes), start the hurt routine
-        if (collision.gameObject.layer == 7 || collision.gameObject.layer == 8)
+        //If the player hits layer 10 (hazard), start the hurt routine
+        if (collision.gameObject.layer == 10)
         {
             if (hurting == false)
             {
                 //If it's spikes, stop the character's velocity
-                if (collision.gameObject.layer == 8)
+                if (collision.gameObject.layer == 10)
                 {
                     body.velocity = Vector2.zero;
                 }
