@@ -84,7 +84,7 @@ public class characterJuice : MonoBehaviour
         Vector3 targetRotVector = new Vector3(0, 0, Mathf.Lerp(-maxTilt, maxTilt, Mathf.InverseLerp(-1, 1, directionToTilt)));
 
         //And then rotate the character in that direction
-        myAnimator.transform.rotation = Quaternion.RotateTowards(myAnimator.transform.rotation, Quaternion.Euler(-targetRotVector), tiltSpeed * Time.deltaTime);
+        characterSprite.transform.rotation = Quaternion.RotateTowards(characterSprite.transform.rotation, Quaternion.Euler(-targetRotVector), tiltSpeed * Time.deltaTime);
     }
 
     private void checkForLanding()
