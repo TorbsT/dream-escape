@@ -48,10 +48,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1813902696186106390, guid: dff1d68d8d4f95d47a21bf654e73830f, type: 3}
-      propertyPath: m_Constraints
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4774907977943801056, guid: dff1d68d8d4f95d47a21bf654e73830f, type: 3}
       propertyPath: m_Color.b
       value: 0.39551443
@@ -66,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5364271317369045830, guid: dff1d68d8d4f95d47a21bf654e73830f, type: 3}
       propertyPath: m_Name
-      value: Block Variant
+      value: RedBlock
       objectReference: {fileID: 0}
     - target: {fileID: 5364271317369045830, guid: dff1d68d8d4f95d47a21bf654e73830f, type: 3}
       propertyPath: m_Layer

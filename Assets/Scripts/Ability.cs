@@ -37,7 +37,10 @@ public class Ability : MonoBehaviour
             comp.SetPhysical(show);
             if (comp.Dimension == Dimension.PURP)
             {
-                comp.gameObject.layer = RED ? 8 : 9;
+                bool isPlayer = comp.gameObject == gameObject;
+                comp.gameObject.layer = isPlayer ?
+                    (RED ? 8 : 9) :
+                    (RED ? 10 : 11);
             }
         }
 

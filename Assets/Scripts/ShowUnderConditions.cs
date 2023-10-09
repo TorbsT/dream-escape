@@ -10,7 +10,7 @@ public class ShowUnderConditions : TriggerReceiver
     {
         SetEnabled(false);
     }
-    public override void Trigger()
+    public override void Trigger(bool power)
     {
         foreach (var condition in Conditions)
         {

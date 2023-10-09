@@ -113,9 +113,10 @@ GameObject:
   - component: {fileID: 8335867630228678035}
   - component: {fileID: 6332128018476467291}
   - component: {fileID: 336806997182595004}
+  - component: {fileID: 1065261551216641040}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,10 +153,10 @@ MonoBehaviour:
   colliderOffset: {x: 0.45, y: 0, z: 0}
   groundLayersRED:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 1089
   groundLayersBLU:
     serializedVersion: 2
-    m_Bits: 129
+    m_Bits: 2177
 --- !u!114 &7470021956824219988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5535,3 +5536,16 @@ MonoBehaviour:
   <Opacity>k__BackingField: 1
   <Animator>k__BackingField: {fileID: 6854728374596191864}
   <SpriteRenderer>k__BackingField: {fileID: 8072021559071448431}
+--- !u!114 &1065261551216641040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290000963866917593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334f0da31ab919f489e675e4a60b8b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SpikePrefab>k__BackingField: {fileID: 4768491955765693626, guid: b75b5191b7ee1994ea7df7d1c0780b8e, type: 3}

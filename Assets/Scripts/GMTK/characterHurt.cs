@@ -42,13 +42,14 @@ public class characterHurt : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //If the player hits layer 10 (hazard), start the hurt routine
-        if (collision.gameObject.layer == 10)
+        Debug.Log(collision.gameObject.layer);
+        //If the player hits layer 3 (hazard), start the hurt routine
+        if (collision.gameObject.layer == 3)
         {
             if (hurting == false)
             {
                 //If it's spikes, stop the character's velocity
-                if (collision.gameObject.layer == 10)
+                if (collision.gameObject.layer == 3)
                 {
                     body.velocity = Vector2.zero;
                 }
@@ -100,6 +101,7 @@ public class characterHurt : MonoBehaviour
         yield return new WaitForSecondsRealtime(duration);
         Time.timeScale = 1.0f;
         waiting = false;
+        Reset.Instance.Restart();
     }
 
     //These two functions handle the flashing white effect when Kit dies

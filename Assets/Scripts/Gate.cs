@@ -9,9 +9,9 @@ public class Gate : TriggerReceiver
     [field: SerializeField] public bool Active { get; private set; } = false;
 
     private bool rotating;
-    public override void Trigger()
+    public override void Trigger(bool power)
     {
-        StartCoroutine(Rotate(Active ? DegreesToRotate : -DegreesToRotate, Duration));
+        StartCoroutine(Rotate(power ? DegreesToRotate : -DegreesToRotate, Duration));
     }
     IEnumerator Rotate(float degs, float duration)
     {

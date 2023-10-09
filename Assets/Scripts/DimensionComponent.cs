@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteAlways]
 public class DimensionComponent : MonoBehaviour
 {
     [field: SerializeField] public Dimension Dimension { get; set; } = Dimension.PURP;
