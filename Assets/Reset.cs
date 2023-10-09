@@ -8,6 +8,6 @@ public class Reset : MonoBehaviour
 {
     public void OnReset(InputAction.CallbackContext context)
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(gameObject.scene.name);
     }
 }

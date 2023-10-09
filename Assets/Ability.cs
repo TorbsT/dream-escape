@@ -30,11 +30,18 @@ public class Ability : MonoBehaviour
         RED = !RED;
         foreach (var comp in FindObjectsByType<DimensionComponent>(FindObjectsSortMode.None))
         {
-            comp.SetPhysical(RED == comp.RED);
+            bool show =
+                (comp.Dimension == Dimension.PURP) ||
+                (comp.Dimension == Dimension.RED && RED) ||
+                (comp.Dimension == Dimension.BLU && !RED);
+            comp.SetPhysical(show);
+            if (comp.Dimension == Dimension.PURP)
+            {
+                comp.gameObject.layer = RED ? 8 : 9;
+            }
         }
 
         Camera.main.backgroundColor = RED ? BLUColor : REDColor;
-        gameObject.layer = RED ? 8 : 9;
         Used?.Invoke(RED);
     }
 }

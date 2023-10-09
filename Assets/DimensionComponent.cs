@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteAlways]
-[SelectionBase]
 public class DimensionComponent : MonoBehaviour
 {
-    [field: SerializeField] public bool RED { get; set; } = true;
+    [field: SerializeField] public Dimension Dimension { get; set; } = Dimension.PURP;
     [field: SerializeField, Range(0f, 1f)] public float Opacity { get; set; } = 1f;
     [field: SerializeField] private Animator Animator { get; set; }
     [field: SerializeField] public SpriteRenderer SpriteRenderer { get; private set; }
@@ -28,4 +27,10 @@ public class DimensionComponent : MonoBehaviour
         this.physical = physical;
         Animator.SetBool("physical", physical);
     }
+}
+public enum Dimension
+{
+    PURP,
+    RED,
+    BLU,
 }
