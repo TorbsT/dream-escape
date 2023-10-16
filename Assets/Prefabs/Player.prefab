@@ -233,10 +233,10 @@ MonoBehaviour:
   body: {fileID: 0}
   velocity: {x: 0, y: 0}
   moveLimit: {fileID: 9133700418580760305}
-  jumpHeight: 5.5
-  timeToJumpApex: 0.5
-  upwardMovementMultiplier: 1.3
-  downwardMovementMultiplier: 2
+  jumpHeight: 13.5
+  timeToJumpApex: 0.7
+  upwardMovementMultiplier: 1.15
+  downwardMovementMultiplier: 1.3
   maxAirJumps: 0
   variablejumpHeight: 0
   jumpCutOff: 1
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveLimit: {fileID: 9133700418580760305}
-  maxSpeed: 10.3
+  maxSpeed: 5
   maxAcceleration: 50
   maxDecceleration: 53.7
   maxTurnSpeed: 82.4

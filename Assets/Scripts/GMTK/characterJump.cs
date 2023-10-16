@@ -13,7 +13,7 @@ public class characterJump : MonoBehaviour
     [SerializeField] movementLimiter moveLimit;
 
     [Header("Jumping Stats")]
-    [SerializeField, Range(2f, 5.5f)][Tooltip("Maximum jump height")] public float jumpHeight = 7.3f;
+    [SerializeField, Range(2f, 25.5f)][Tooltip("Maximum jump height")] public float jumpHeight = 7.3f;
 
 
 //If you're using your stats from Platformer Toolkit with this character controller, please note that the number on the Jump Duration handle does not match this stat
