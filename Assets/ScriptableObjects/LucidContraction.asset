@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LucidContraction
   m_EditorClassIdentifier: 
   shakeType: 0
-  strength: 0.2
-  roughness: 10
+  strength: 0.1
+  roughness: 2
   fadeIn: 0.5
   fadeOut: 0.4
   positionInfluence: {x: 1, y: 1, z: 0}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LucidExplosion
   m_EditorClassIdentifier: 
   shakeType: 0
-  strength: 0.3
-  roughness: 20
+  strength: 0.15
+  roughness: 4
   fadeIn: 0.05
   fadeOut: 0.5
   positionInfluence: {x: 1, y: 1, z: 0}
