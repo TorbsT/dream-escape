@@ -30,6 +30,7 @@ public class PressurePlate : MonoBehaviour
     }
     private void RefreshCharge()
     {
+        if (!Application.isPlaying) return;
         bool newActive = colls > 0;
         if (Active == newActive) return;
         foreach (var r in Receivers)

@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.90588236
       objectReference: {fileID: 0}
+    - target: {fileID: 216753003078791501, guid: 44ae72fb48495ca4481833714e603a1c, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 338477189686251071, guid: 44ae72fb48495ca4481833714e603a1c, type: 3}
       propertyPath: m_Layer
       value: 0

@@ -12,7 +12,8 @@ public class TimeStop : MonoBehaviour
     [SerializeField] private float timeLeft;
     public void Stop(float duration)
     {
-        timeLeft = 0.05f;
+        timeLeft = duration+EaseInDuration;
+        SetTimeScale(0f);
         //TODO
     }
     private void Awake()
@@ -22,7 +23,18 @@ public class TimeStop : MonoBehaviour
     private void Update()
     {
         timeLeft -= Time.unscaledDeltaTime;
-        if (timeLeft <= 0f) Time.timeScale = 1f;
+        if (timeLeft <= 0f)
+            SetTimeScale(1f);
+        else if (timeLeft <= EaseInDuration)
+        {
+            float progress = 1f - (timeLeft / EaseInDuration);
+            float scale = EaseInCurve.Evaluate(progress);
+            SetTimeScale(scale);
+        }
     }
-
+    private void SetTimeScale(float scale)
+    {
+        Time.timeScale = scale;
+        Time.fixedDeltaTime = 0.02F * Time.timeScale;
+    }
 }

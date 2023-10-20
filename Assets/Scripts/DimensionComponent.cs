@@ -24,6 +24,7 @@ public class DimensionComponent : MonoBehaviour
     public void SetPhysical(bool physical)
     {
         this.physical = physical;
+        if (Animator == null) return;
         Animator.SetBool("physical", physical);
     }
 }

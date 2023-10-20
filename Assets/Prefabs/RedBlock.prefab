@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8301887
       objectReference: {fileID: 0}
+    - target: {fileID: 4774907977943801056, guid: dff1d68d8d4f95d47a21bf654e73830f, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5364271317369045830, guid: dff1d68d8d4f95d47a21bf654e73830f, type: 3}
       propertyPath: m_Name
       value: RedBlock
@@ -75,5 +79,25 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5323966229802036461, guid: dff1d68d8d4f95d47a21bf654e73830f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4734655207490448647}
   m_SourcePrefab: {fileID: 100100000, guid: dff1d68d8d4f95d47a21bf654e73830f, type: 3}
+--- !u!1 &5540161939452207425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5323966229802036461, guid: dff1d68d8d4f95d47a21bf654e73830f, type: 3}
+  m_PrefabInstance: {fileID: 360319831812509100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4734655207490448647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540161939452207425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be15a0bebbbd31e4e9948c6a3b90155d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -5,29 +5,63 @@ using UnityEngine;
 public class Gate : TriggerReceiver
 {
     [field: SerializeField, Range(-360f, 360f)] public float DegreesToRotate { get; private set; } = 180f;
+    [field: SerializeField] public Vector2 DistanceToTravel { get; private set; }
     [field: SerializeField, Range(0f, 2f)] public float Duration { get; private set; } = 1f;
-    [field: SerializeField] public bool Active { get; private set; } = false;
 
-    private bool rotating;
+
+    private Vector2 originalPos;
+    private Quaternion originalRot;
+    private Vector2 activePos;
+    private Quaternion activeRot;
+
+    private Vector2 fromPos;
+    private Vector2 toPos;
+    private Quaternion fromRot;
+    private Quaternion toRot;
+
+    private bool powered;
+    private float time;
+    private bool done;
     public override void Trigger(bool power)
     {
-        StartCoroutine(Rotate(power ? DegreesToRotate : -DegreesToRotate, Duration));
+        powered = power;
+        done = false;
+        time = Duration - time;
+
+
+        Refresh();
     }
-    IEnumerator Rotate(float degs, float duration)
+
+    private void Awake()
     {
-        rotating = true;
+        originalPos = transform.localPosition;
+        originalRot = transform.localRotation;
+        activeRot = Quaternion.Euler(0f, 0f, DegreesToRotate) * transform.localRotation;
+        activePos = originalPos + DistanceToTravel;
+        Refresh();
+    }
+    void Update()
+    {
+        if (done) return;
 
-        Quaternion originalRot = transform.localRotation;
-        Quaternion newRot = Quaternion.Euler(0f, 0f, degs) * transform.localRotation;
-
-        float t = 0f;
-        while (t <= 1.0)
+        time += Time.unscaledDeltaTime;
+        if (time > Duration)
         {
-            t += Time.unscaledDeltaTime / duration;
-            transform.localRotation = Quaternion.Lerp(originalRot, newRot, t);
-            yield return null;
+            time = Duration;
         }
 
-        rotating = false;
+        SetT(time / Duration);
+    }
+    private void SetT(float t)
+    {
+        transform.localRotation = Quaternion.Lerp(fromRot, toRot, t);
+        transform.localPosition = Vector2.Lerp(fromPos, toPos, t);
+    }
+    private void Refresh()
+    {
+        fromPos = powered ? originalPos : activePos;
+        toPos = !powered ? originalPos : activePos;
+        fromRot = powered ? originalRot : activeRot;
+        toRot = !powered ? originalRot : activeRot;
     }
 }

@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.torbst.torbutils": {
+      "version": "https://github.com/TorbsT/Torbutils.git?path=/Packages/com.torbst.torbutils/",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "58d5d21c4ccdbd1d2e53f0ca6152260788c4468c"
+    },
     "com.unity.2d.animation": {
       "version": "10.0.3",
       "depth": 1,

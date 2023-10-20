@@ -7,25 +7,32 @@ using UnityEngine.InputSystem;
 public class Ability : MonoBehaviour
 {
     public static Ability Instance { get; private set; }
-    public event Action<bool> Used;
+    public event Action<bool, bool> Used;
     [field: SerializeField] public bool RED { get; private set; }
     [field: SerializeField] public Color REDColor { get; private set; } = Color.red;
     [field: SerializeField] public Color BLUColor { get; private set; } = Color.cyan;
+    private int timesUsed = 0;
+    private List<AudioSource> audios = new();
 
     private void Awake()
     {
         Instance = this;
         RED = false;
+        foreach (var src in GetComponents<AudioSource>())
+            audios.Add(src);
     }
     private void Start()
     {
-        UseAbility();
+        UseAbility(true);
     }
     public void OnUseAbility(InputAction.CallbackContext context)
     {
-        UseAbility();
+        if (context.performed)
+        {
+            UseAbility();
+        }
     }
-    public void UseAbility()
+    public void UseAbility(bool initial = false)
     {
         RED = !RED;
         foreach (var comp in FindObjectsByType<DimensionComponent>(FindObjectsSortMode.None))
@@ -44,7 +51,14 @@ public class Ability : MonoBehaviour
             }
         }
 
-        Camera.main.backgroundColor = RED ? BLUColor : REDColor;
-        Used?.Invoke(RED);
+        if (!initial)
+        {
+            ParticleManager.Instance.Spawn("lucid", transform.position);
+            TimeStop.Instance.Stop(0f);
+            AudioManager.Instance.Spawn($"lucid{timesUsed % 2}");
+            timesUsed++;
+        }
+
+        Used?.Invoke(RED, initial);
     }
 }

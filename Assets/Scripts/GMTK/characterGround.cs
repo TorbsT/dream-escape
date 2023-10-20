@@ -31,7 +31,7 @@ public class characterGround : MonoBehaviour
     }
     private void OnEnable() => Ability.Instance.Used += AbilityUsed;
     private void OnDisable() => Ability.Instance.Used -= AbilityUsed;
-    private void AbilityUsed(bool RED)
+    private void AbilityUsed(bool RED, bool initial)
     {
         groundLayers = RED ? groundLayersRED : groundLayersBLU;
     }
