@@ -53,7 +53,7 @@ public class Ability : MonoBehaviour
 
         if (!initial)
         {
-            ParticleManager.Instance.Spawn("lucid", transform.position);
+            ParticleManager.Instance.Spawn("lucid", Head.Instance.transform.position);
             TimeStop.Instance.Stop(0f);
             AudioManager.Instance.Spawn($"lucid{timesUsed % 2}");
             timesUsed++;
