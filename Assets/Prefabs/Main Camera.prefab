@@ -57,6 +57,7 @@ MonoBehaviour:
   shaker: {fileID: 2297836501386213040}
   lucid0Preset: {fileID: 11400000, guid: 26a8c951e1739d64386c731797a6117a, type: 2}
   lucid1Preset: {fileID: 11400000, guid: a03b7a58cf2ab88408f1ec5b3951261e, type: 2}
+  deathPreset: {fileID: 11400000, guid: bd4328bd5427ab74383676e7049ce3d3, type: 2}
 --- !u!1 &8267062517338807686
 GameObject:
   m_ObjectHideFlags: 0

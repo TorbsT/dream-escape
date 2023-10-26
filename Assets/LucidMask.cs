@@ -25,7 +25,7 @@ public class LucidMask : MonoBehaviour
     }
     private void Update()
     {
-        transform.position = Ability.Instance.transform.position;
+        transform.position = Head.Instance.transform.position;
         if (!active) return;
 
         if (expanding)

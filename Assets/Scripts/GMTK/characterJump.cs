@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class characterJump : MonoBehaviour
 {
+    public event Action Jumped;
+
     [Header("Components")]
     [HideInInspector] public Rigidbody2D body;
     private characterGround ground;
@@ -274,6 +277,7 @@ public class characterJump : MonoBehaviour
             //If we don't have a jump buffer, then turn off desiredJump immediately after hitting jumping
             desiredJump = false;
         }
+        Jumped?.Invoke();
     }
 
     public void bounceUp(float bounceAmount)

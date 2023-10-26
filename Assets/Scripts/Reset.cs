@@ -8,10 +8,6 @@ public class Reset : MonoBehaviour
 {
     public static Reset Instance {  get; private set; }
 
-    public void OnReset(InputAction.CallbackContext context)
-    {
-        Restart();
-    }
     public void Restart()
     {
         SceneManager.LoadScene(gameObject.scene.name);
@@ -20,5 +16,10 @@ public class Reset : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+            Restart();
     }
 }

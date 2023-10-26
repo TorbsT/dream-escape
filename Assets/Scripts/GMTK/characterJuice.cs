@@ -101,14 +101,7 @@ public class characterJuice : MonoBehaviour
             //Play an animation, some particles, and a sound effect when the player lands
             if (myAnimator != null && myAnimator.isActiveAndEnabled)
                 myAnimator.SetTrigger("Landed");
-            landParticles.Play();
-
-            if (!landSFX.isPlaying && landSFX.enabled)
-            {
-                landSFX.Play();
-            }
-
-            moveParticles.Play();
+            //landParticles.Play();
 
             //Start the landing squash and stretch coroutine.
             if (!landSqueezing && landSqueezeMultiplier > 1)
@@ -122,7 +115,7 @@ public class characterJuice : MonoBehaviour
         {
             // Player has left the ground, so stop playing the running particles
             playerGrounded = false;
-            moveParticles.Stop();
+            //moveParticles.Stop();
         }
     }
 
@@ -149,19 +142,13 @@ public class characterJuice : MonoBehaviour
             myAnimator.SetTrigger("Jump");
         }
 
-        if (jumpSFX.enabled)
-        {
-            jumpSFX.Play();
-
-        }
-
         if (!jumpSqueezing && jumpSqueezeMultiplier > 1)
         {
             StartCoroutine(JumpSqueeze(jumpSquashSettings.x / jumpSqueezeMultiplier, jumpSquashSettings.y * jumpSqueezeMultiplier, jumpSquashSettings.z, 0, true));
 
         }
 
-        jumpParticles.Play();
+        //jumpParticles.Play();
     }
 
     IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds, float dropAmount, bool jumpSqueeze)

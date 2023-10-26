@@ -8,9 +8,8 @@ using UnityEngine.Events;
 
 public class characterHurt : MonoBehaviour
 {
+    public static characterHurt Instance { get; private set; }
     [Header("Components")]
-    [SerializeField] Vector3 checkpointFlag;
-    [SerializeField] Animator myAnim;
     [SerializeField] movementLimiter myLimit;
     [SerializeField] optionsManagement optionsScript;
     [SerializeField] AudioSource hurtSFX;
@@ -29,20 +28,17 @@ public class characterHurt : MonoBehaviour
     bool waiting = false;
     bool hurting = false;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
     }
 
-    public void newCheckpoint(Vector3 flagPos)
-    {
-        //When the player touches a checkpoint, it passes its position to this script
-        checkpointFlag = flagPos;
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.layer);
         //If the player hits layer 3 (hazard), start the hurt routine
         if (collision.gameObject.layer == 3)
         {
@@ -55,25 +51,24 @@ public class characterHurt : MonoBehaviour
                 }
 
                 hurting = true;
-                hurtRoutine();
+                onHurt?.Invoke();
+                gameObject.SetActive(false);
+                //hurtRoutine();
             }
         }
     }
 
     public void hurtRoutine()
     {
-        myLimit.characterCanMove = false;
-
         if (optionsScript.screenShake)
         {
             //The screenshake is played in a Unity Event, provided the option is turned on
-            onHurt?.Invoke();
+            
         }
 
-        hurtSFX.Play();
 
-        Stop(0.1f);
-        myAnim.SetTrigger("Hurt");
+        //StartCoroutine(Wait(1.));
+        //myAnim.SetTrigger("Hurt");
         Flash();
 
         //Start a timer, before respawning the player. This uses the (excellent) free Unity asset DOTween
@@ -81,18 +76,12 @@ public class characterHurt : MonoBehaviour
         DOTween.To(() => timer, x => timer = x, 1, respawnTime).OnComplete(respawnRoutine);
     }
 
-    //These three functions handle the hit stop effect, where the game pauses for a brief moment on death
-    public void Stop(float duration)
-    {
-        Stop(duration, 0.0f);
-    }
-
-    public void Stop(float duration, float timeScale)
+    public void RestartAfter(float duration)
     {
         if (waiting)
             return;
-        Time.timeScale = timeScale;
-        StartCoroutine(Wait(duration));
+        //Time.timeScale = timeScale;
+        
     }
 
     IEnumerator Wait(float duration)
@@ -133,9 +122,9 @@ public class characterHurt : MonoBehaviour
     //After the timer ends, respawn Kit at the nearest checkpoint and let her move again
     private void respawnRoutine()
     {
-        transform.position = checkpointFlag;
+        //transform.position = checkpointFlag;
         myLimit.characterCanMove = true;
-        myAnim.SetTrigger("Okay");
+        //myAnim.SetTrigger("Okay");
         hurting = false;
     }
 }
