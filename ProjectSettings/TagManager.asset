@@ -8,16 +8,16 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hazard
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - RED
+  - BLU
+  - REDplayer
+  - BLUplayer
+  - REDtransient
+  - BLUtransient
+  - Slope
   - 
   - 
   - 
