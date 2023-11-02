@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f75371aad4312c741b9de1bf0cffdf5c
+guid: 65f098a6593856c46927e34243331121
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6257911299343668158
-    second: CoolAssCircleMask_0
+      213: -903175537582812665
+    second: allefant_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CoolAssCircleMask_0
+      name: allefant_0
       rect:
         serializedVersion: 2
-        x: 667
-        y: 247
-        width: 586
-        height: 586
+        x: 223
+        y: 0
+        width: 1697
+        height: 874
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 24ca7be34de6729a0800000000000000
-      internalID: -6257911299343668158
+      spriteID: 702dd8042a64773f0800000000000000
+      internalID: -903175537582812665
       vertices: []
       indices: 
       edges: []
@@ -140,8 +140,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      CoolAssCircleMask_0: -6257911299343668158
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
