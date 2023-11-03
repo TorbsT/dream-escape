@@ -90,6 +90,10 @@ public class characterMovement : MonoBehaviour
         //Get Kit's current ground status from her ground script
         onGround = ground.GetOnGround();
 
+        if (directionX == 0)
+            body.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        else
+            body.constraints = RigidbodyConstraints2D.FreezeRotation;
         //Get the Rigidbody's current velocity
         velocity = body.velocity;
 
@@ -143,7 +147,6 @@ public class characterMovement : MonoBehaviour
 
         //Update the Rigidbody with this new velocity
         body.velocity = velocity;
-
     }
 
     private void runWithoutAcceleration()
@@ -153,7 +156,4 @@ public class characterMovement : MonoBehaviour
 
         body.velocity = velocity;
     }
-
-
-
 }

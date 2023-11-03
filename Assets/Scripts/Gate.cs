@@ -8,7 +8,7 @@ public class Gate : TriggerReceiver
     [field: SerializeField] public Vector2 DistanceToTravel { get; private set; }
     [field: SerializeField, Range(0f, 2f)] public float Duration { get; private set; } = 1f;
 
-
+    private HashSet<GameObject> powerSources = new();
     private Vector2 originalPos;
     private Quaternion originalRot;
     private Vector2 activePos;
@@ -22,11 +22,20 @@ public class Gate : TriggerReceiver
     private bool powered;
     private float time;
     private bool done;
-    public override void Trigger(bool power)
+    public override void Trigger(GameObject source, bool power)
     {
-        powered = power;
-        done = false;
-        time = Duration - time;
+        if (power)
+            powerSources.Add(source);
+        else
+            powerSources.Remove(source);
+        bool newPowered = powerSources.Count > 0;
+
+        if (newPowered != powered)
+        {
+            done = false;
+            time = Duration - time;
+        }
+        powered = newPowered;
 
 
         Refresh();

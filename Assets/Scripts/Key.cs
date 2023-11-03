@@ -19,9 +19,10 @@ public class Key : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         foreach (var item in Receivers)
-            item.Trigger(true);
+            item.Trigger(gameObject, true);
         //Invoke(nameof(Reactivate), 1.5f);
-        TimeStop.Instance.Stop(0.1f);
+        TimeStop.Instance.Stop(0f);
+        CameraManager.Instance.Shake(CameraManager.Instance.LeverPreset);
         gameObject.SetActive(false);
     }
     private void Reactivate()

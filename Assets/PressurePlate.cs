@@ -7,6 +7,7 @@ public class PressurePlate : MonoBehaviour
 {
     [field: SerializeField] public List<TriggerReceiver> Receivers { get; private set; }
     [field: SerializeField] public bool Active { get; private set; }
+    [SerializeField] private Animator animator;
     private int colls = 0;
 
     private void OnDrawGizmos()
@@ -35,8 +36,9 @@ public class PressurePlate : MonoBehaviour
         if (Active == newActive) return;
         foreach (var r in Receivers)
         {
-            r.Trigger(newActive);
+            r.Trigger(gameObject, newActive);
         }
+        animator.SetBool("pressed", newActive);
         Active = newActive;
     }
 }

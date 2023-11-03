@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    public static CameraManager Instance { get; private set; }
+    [field: SerializeField] public ShakePreset LeverPreset { get; private set; }
     [SerializeField] private Shaker shaker;
     [SerializeField] private ShakePreset lucid0Preset;
     [SerializeField] private ShakePreset lucid1Preset;
@@ -12,6 +14,7 @@ public class CameraManager : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
     }
     private void OnEnable()
     {
@@ -33,7 +36,7 @@ public class CameraManager : MonoBehaviour
     {
         Shake(deathPreset);
     }
-    private void Shake(ShakePreset preset)
+    public void Shake(ShakePreset preset)
     {
         shaker.Shake(preset);
     }

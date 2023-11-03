@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class LucidMask : MonoBehaviour
 {
+    public static LucidMask Instance {  get; private set; }
 
     [SerializeField] private AnimationCurve dispandAnimCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
     [SerializeField] private AnimationCurve expandCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
     [SerializeField] private float expandAnimDuration = 0.99f;
-    [SerializeField] private float dispandAnimDuration = 1.465f;
+    [field: SerializeField] public float DispandAnimDuration { get; private set; } = 1.465f;
     [SerializeField] private float animStartSize = 0.01f;
     [SerializeField] private float animEndSize = 500f;
     private bool active;
     private float age;
     private bool expanding;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void OnEnable()
     {
         Ability.Instance.Used += Boom;
@@ -48,7 +53,7 @@ public class LucidMask : MonoBehaviour
                 transform.position = Vector3.left * 100f;
                 return;
             }
-            transform.localScale = Vector3.one * (animEndSize * dispandAnimCurve.Evaluate(age / dispandAnimDuration) + animStartSize);
+            transform.localScale = Vector3.one * (animEndSize * dispandAnimCurve.Evaluate(age / DispandAnimDuration) + animStartSize);
         }
     }
     private void Boom(bool RED, bool initial)
@@ -65,6 +70,6 @@ public class LucidMask : MonoBehaviour
         active = true;
         expanding = !RED;
         if (!expanding)
-            age = dispandAnimDuration;
+            age = DispandAnimDuration;
     }
 }

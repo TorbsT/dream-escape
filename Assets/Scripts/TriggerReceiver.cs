@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class TriggerReceiver : MonoBehaviour
 {
-    public abstract void Trigger(bool power);
+    public abstract void Trigger(GameObject source, bool power);
 }

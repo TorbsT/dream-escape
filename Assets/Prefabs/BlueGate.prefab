@@ -41,7 +41,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338477189686251071}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 43eb0bef7aa9c6e47afc43f81d5b7040, type: 2}
   m_CullingMode: 0
@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 4479381545416111856}
   - component: {fileID: 367778299995134558}
   - component: {fileID: 161677216930489285}
+  - component: {fileID: 3475047652983315537}
   m_Layer: 7
   m_Name: BlueGate
   m_TagString: Untagged
@@ -261,3 +262,18 @@ MonoBehaviour:
   <Opacity>k__BackingField: 1
   <Animator>k__BackingField: {fileID: 4533048797640721870}
   <SpriteRenderer>k__BackingField: {fileID: 216753003078791501}
+--- !u!114 &3475047652983315537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903250832761123182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466211407d3aa014bb9f17d5a7250d05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <DegreesToRotate>k__BackingField: -90
+  <DistanceToTravel>k__BackingField: {x: 0, y: 0}
+  <Duration>k__BackingField: 0.5

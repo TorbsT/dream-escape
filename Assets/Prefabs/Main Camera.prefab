@@ -54,6 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43459c6ca6d6f464b90587ef1fdf5d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <LeverPreset>k__BackingField: {fileID: 11400000, guid: bd4328bd5427ab74383676e7049ce3d3, type: 2}
   shaker: {fileID: 2297836501386213040}
   lucid0Preset: {fileID: 11400000, guid: 26a8c951e1739d64386c731797a6117a, type: 2}
   lucid1Preset: {fileID: 11400000, guid: a03b7a58cf2ab88408f1ec5b3951261e, type: 2}

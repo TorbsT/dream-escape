@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class Ability : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Ability : MonoBehaviour
     [field: SerializeField] public Color REDColor { get; private set; } = Color.red;
     [field: SerializeField] public Color BLUColor { get; private set; } = Color.cyan;
     private int timesUsed = 0;
+    private float timeSinceAbility;
     private List<AudioSource> audios = new();
 
     private void Awake()
@@ -35,6 +37,7 @@ public class Ability : MonoBehaviour
     public void UseAbility(bool initial = false)
     {
         RED = !RED;
+        timeSinceAbility = initial ? 100f : 0f;
         foreach (var comp in FindObjectsByType<DimensionComponent>(FindObjectsSortMode.None))
         {
             bool show =
@@ -45,9 +48,8 @@ public class Ability : MonoBehaviour
             if (comp.Dimension == Dimension.PURP)
             {
                 bool isPlayer = comp.gameObject == gameObject;
-                comp.gameObject.layer = isPlayer ?
-                    (RED ? 8 : 9) :
-                    (RED ? 10 : 11);
+                if (!isPlayer)
+                    comp.gameObject.layer = (RED ? 10 : 11);
             }
         }
 
@@ -60,5 +62,12 @@ public class Ability : MonoBehaviour
         }
 
         Used?.Invoke(RED, initial);
+    }
+    private void Update()
+    {
+        timeSinceAbility += Time.deltaTime;
+        bool timePassed = timeSinceAbility >= LucidMask.Instance.DispandAnimDuration;
+        bool showUpdatedRED = RED && timePassed;
+        gameObject.layer = (showUpdatedRED ? 8 : 9);
     }
 }
