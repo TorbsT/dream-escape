@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cfd81da28feba8840bffb7034b62adc9
+guid: 68a54a2aca816724cbdb1534abb8ea48
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3844731362385766099
-    second: Rectangle 1419_0
+      213: 8311284826631190255
+    second: StairsRED_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 140
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rectangle 1419_0
+      name: StairsRED_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 82
-        height: 876
+        width: 1602
+        height: 1027
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2951383235c4aac0800000000000000
-      internalID: -3844731362385766099
+      spriteID: fe63276c38d975370800000000000000
+      internalID: 8311284826631190255
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rectangle 1419_0: -3844731362385766099
+      StairsRED_0: 8311284826631190255
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

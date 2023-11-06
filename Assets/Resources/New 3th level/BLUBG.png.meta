@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cfd81da28feba8840bffb7034b62adc9
+guid: fa45180beb7b25042a993ca6dd7ccf3f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3844731362385766099
-    second: Rectangle 1419_0
+      213: 9079343228680996475
+    second: BLUBG_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rectangle 1419_0
+      name: BLUBG_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 82
-        height: 876
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2951383235c4aac0800000000000000
-      internalID: -3844731362385766099
+      spriteID: b760163ef8e400e70800000000000000
+      internalID: 9079343228680996475
       vertices: []
       indices: 
       edges: []
@@ -140,8 +140,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Rectangle 1419_0: -3844731362385766099
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
