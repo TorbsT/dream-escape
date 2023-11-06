@@ -47,7 +47,12 @@ public class Gate : TriggerReceiver
         originalRot = transform.localRotation;
         activeRot = Quaternion.Euler(0f, 0f, DegreesToRotate) * transform.localRotation;
         activePos = originalPos + DistanceToTravel;
+
+        powered = true;
+        powered = false;
         Refresh();
+        SetT(1f);
+        done = true;
     }
     void Update()
     {
