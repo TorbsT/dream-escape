@@ -645,7 +645,6 @@ GameObject:
   - component: {fileID: 9133700418580760305}
   - component: {fileID: 1143621951943946794}
   - component: {fileID: 4039679378244958674}
-  - component: {fileID: 3548157772535523260}
   - component: {fileID: 3556677793474066443}
   - component: {fileID: 3557618535213275685}
   - component: {fileID: 6332128018476467291}
@@ -879,52 +878,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &3548157772535523260
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7290000963866917593}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: b94415528bfa3e14ea9834b3ca7cc4a2, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.95, y: 0.95}
-  m_EdgeRadius: 0
 --- !u!114 &3556677793474066443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,14 +1112,14 @@ MonoBehaviour:
   dontDestroys:
   - {fileID: 5127293869447306154, guid: bf556424463d84b409f9a328109f9d53, type: 3}
   - {fileID: 5966476385181541201, guid: ad5fbfbd296da6b47b5d74965030c190, type: 3}
-  - {fileID: 7223396465829880834, guid: b93f5dd4c8d9e41488e088d6d82b8a00, type: 3}
-  - {fileID: 6541312580604401253, guid: b07751794943837498e20518afec38be, type: 3}
   doDestroys:
   - {fileID: 6383006238161285942, guid: 1a2d3ed30d3db624b864a97c371aea96, type: 3}
   - {fileID: 6240967154434721188, guid: 13fb9efb440d2204190aa337e0132d77, type: 3}
   - {fileID: 3063485865760750194, guid: 9c28b295c950da448ae1694f9643ce37, type: 3}
   - {fileID: 2618972271422994894, guid: b34b2bdd0f0975742a460dea833c250e, type: 3}
   - {fileID: 9198932689804783557, guid: 180c5f4101e8942498232ba0569067f0, type: 3}
+  - {fileID: 7223396465829880834, guid: b93f5dd4c8d9e41488e088d6d82b8a00, type: 3}
+  - {fileID: 6541312580604401253, guid: b07751794943837498e20518afec38be, type: 3}
 --- !u!114 &7282746535788720321
 MonoBehaviour:
   m_ObjectHideFlags: 0

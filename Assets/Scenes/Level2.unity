@@ -120,6 +120,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &115265156
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3372553426282912607, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372553426282912607, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372553426282912607, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372553426282912607, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372553426282912607, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372553426282912607, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372553426282912607, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372553426282912607, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372553426282912607, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372553426282912607, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7431681500236032426, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794848200280162820, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
+      propertyPath: leadsTo
+      value: Level3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c0199bdedcfe2f4bbfdd14c9a84028c, type: 3}
 --- !u!1 &149322169
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,25 +797,27 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -8.63401, y: -0.56683}
-  - {x: -8.649503, y: -2.409027}
-  - {x: -4.869647, y: -2.3793807}
-  - {x: -4.8263507, y: -3.401491}
-  - {x: 0.3561883, y: -3.2809682}
-  - {x: 0.47743487, y: -2.527226}
-  - {x: 4.4058094, y: -2.3619995}
-  - {x: 4.453554, y: -1.5146866}
-  - {x: 10.539457, y: -1.4198115}
-  - {x: 10.508946, y: -0.5704884}
-  - {x: 8.779543, y: -0.5668817}
-  - {x: 8.751606, y: 1.4050615}
-  - {x: 6.8077164, y: 1.4144611}
-  - {x: 6.791826, y: 3.3508022}
-  - {x: 3.8629053, y: 3.356691}
-  - {x: 3.9077747, y: 0.3974094}
-  - {x: 2.919423, y: 0.43853796}
-  - {x: 2.883325, y: -0.57208496}
-  - {x: -8.597621, y: -0.6235129}
+  - {x: -4.915388, y: -2.3702497}
+  - {x: -4.9085236, y: -2.6773043}
+  - {x: -4.877099, y: -3.0202653}
+  - {x: -4.928781, y: -3.401491}
+  - {x: 0.3561883, y: -3.3705945}
+  - {x: 0.3365934, y: -2.4504037}
+  - {x: 4.418613, y: -2.400411}
+  - {x: 4.3895354, y: -1.4378641}
+  - {x: 10.583775, y: -1.4514668}
+  - {x: 10.578588, y: -0.51984006}
+  - {x: 8.716232, y: -0.5415574}
+  - {x: 8.713619, y: 1.462041}
+  - {x: 6.76973, y: 1.4524475}
+  - {x: 6.7601705, y: 3.3508022}
+  - {x: 3.7869325, y: 3.375684}
+  - {x: 3.8088007, y: 0.43275723}
+  - {x: 2.8628666, y: 0.43853796}
+  - {x: 2.8903947, y: -0.52259797}
+  - {x: -8.672352, y: -0.52301073}
+  - {x: -8.658939, y: -2.3894649}
+  - {x: -4.983329, y: -2.4120286}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -4287,3 +4350,4 @@ SceneRoots:
   - {fileID: 1470154043}
   - {fileID: 1518924289}
   - {fileID: 2006364098}
+  - {fileID: 115265156}

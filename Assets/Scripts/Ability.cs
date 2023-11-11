@@ -9,6 +9,7 @@ public class Ability : MonoBehaviour
 {
     public static Ability Instance { get; private set; }
     public event Action<bool, bool> Used;
+    public event Action FailedUse;
     [field: SerializeField] public bool RED { get; private set; }
     [field: SerializeField] public Color REDColor { get; private set; } = Color.red;
     [field: SerializeField] public Color BLUColor { get; private set; } = Color.cyan;
@@ -36,6 +37,12 @@ public class Ability : MonoBehaviour
     }
     public void UseAbility(bool initial = false)
     {
+        if (timesUsed >= 2)
+        {
+            FailedUse?.Invoke();
+            return;
+        }
+
         RED = !RED;
         timeSinceAbility = initial ? 100f : 0f;
         foreach (var comp in FindObjectsByType<DimensionComponent>(FindObjectsSortMode.None))
