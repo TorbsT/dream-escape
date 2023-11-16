@@ -1203,17 +1203,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30B3\u30F3\u306A\u3093\u3067"
+  m_text: "\u30B3\u30C3\u30AF\u30A2\u30F3\u30C9\u30DC\u30FC\u30EB\u30C8\u30FC\u30C1\u30E3\u30FC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c0b8b2ab58e63c94f9786cf8a3bfec6d, type: 2}
-  m_sharedMaterial: {fileID: 6416408798739858476, guid: c0b8b2ab58e63c94f9786cf8a3bfec6d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d31c86aeacc022e4dac7665904c70ae1, type: 2}
+  m_sharedMaterial: {fileID: 1586303890312254261, guid: d31c86aeacc022e4dac7665904c70ae1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282335002
+  m_fontColor: {r: 0.10059601, g: 0.249, b: 0.24546659, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1230,13 +1230,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 8.4
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 1
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1246,15 +1246,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 0
   m_isCullingEnabled: 0
@@ -1295,7 +1297,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6416408798739858476, guid: c0b8b2ab58e63c94f9786cf8a3bfec6d, type: 2}
+  - {fileID: 1586303890312254261, guid: d31c86aeacc022e4dac7665904c70ae1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1333,8 +1335,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.0892525, y: -3.582097}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: -2.0453, y: -1.3947}
+  m_SizeDelta: {x: 12.5372, y: 1.3735}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &961353616 stripped
 MonoBehaviour:
