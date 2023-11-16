@@ -14,14 +14,8 @@ public class Gate : TriggerReceiver
     private Vector2 activePos;
     private Quaternion activeRot;
 
-    private Vector2 fromPos;
-    private Vector2 toPos;
-    private Quaternion fromRot;
-    private Quaternion toRot;
-
     private bool powered;
     private float time;
-    private bool done;
     public override void Trigger(GameObject source, bool power)
     {
         if (power)
@@ -30,15 +24,7 @@ public class Gate : TriggerReceiver
             powerSources.Remove(source);
         bool newPowered = powerSources.Count > 0;
 
-        if (newPowered != powered)
-        {
-            done = false;
-            time = Duration - time;
-        }
         powered = newPowered;
-
-
-        Refresh();
     }
 
     private void Awake()
@@ -48,34 +34,24 @@ public class Gate : TriggerReceiver
         activeRot = Quaternion.Euler(0f, 0f, DegreesToRotate) * transform.localRotation;
         activePos = originalPos + DistanceToTravel;
 
-        powered = true;
         powered = false;
-        Refresh();
-        SetT(1f);
-        done = true;
+        time = 0f;
+        SetT(0f);
     }
     void Update()
     {
-        if (done) return;
+        float d = Time.unscaledDeltaTime / Duration;
+        if (powered)
+            time += d;
+        else
+            time -= d;
+        time = Mathf.Clamp(time, 0f, 1f);
 
-        time += Time.unscaledDeltaTime;
-        if (time > Duration)
-        {
-            time = Duration;
-        }
-
-        SetT(time / Duration);
+        SetT(time);
     }
     private void SetT(float t)
     {
-        transform.localRotation = Quaternion.Lerp(fromRot, toRot, t);
-        transform.localPosition = Vector2.Lerp(fromPos, toPos, t);
-    }
-    private void Refresh()
-    {
-        fromPos = powered ? originalPos : activePos;
-        toPos = !powered ? originalPos : activePos;
-        fromRot = powered ? originalRot : activeRot;
-        toRot = !powered ? originalRot : activeRot;
+        transform.localRotation = Quaternion.Lerp(originalRot, activeRot, t);
+        transform.localPosition = Vector2.Lerp(originalPos, activePos, t);
     }
 }

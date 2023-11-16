@@ -33,8 +33,7 @@ public class characterGround : MonoBehaviour
         float velY = rb.velocityY;
         if (onGround && !wasOnGround)
         {
-            Debug.Log(prevVelY);
-            AudioManager.Instance.PlayRandom("footstep", Mathf.Abs(prevVelY)/37f);
+            Landed?.Invoke(prevVelY);
         }
         prevVelY = velY;
         wasOnGround = onGround;

@@ -1203,17 +1203,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30B3\u30F3\u306A\u3093\u3067"
+  m_text: "\u30B3\u30C3\u30AF\u30A2\u30F3\u30C9\u30DC\u30FC\u30EB\u30C8\u30FC\u30C1\u30E3\u30FC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c0b8b2ab58e63c94f9786cf8a3bfec6d, type: 2}
-  m_sharedMaterial: {fileID: 6416408798739858476, guid: c0b8b2ab58e63c94f9786cf8a3bfec6d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bbad652acd99ec946a4264ae8420dd49, type: 2}
+  m_sharedMaterial: {fileID: -418953369431830280, guid: bbad652acd99ec946a4264ae8420dd49, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1230,13 +1230,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 11.9
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 1
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1295,7 +1295,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6416408798739858476, guid: c0b8b2ab58e63c94f9786cf8a3bfec6d, type: 2}
+  - {fileID: -418953369431830280, guid: bbad652acd99ec946a4264ae8420dd49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1333,8 +1333,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.0892525, y: -3.582097}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: -2.2788, y: -1.4399}
+  m_SizeDelta: {x: 12.6225, y: 1.7237}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &961353616 stripped
 MonoBehaviour:
