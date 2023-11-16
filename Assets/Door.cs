@@ -31,7 +31,7 @@ public class Door : MonoBehaviour
     }
     private void Confetti()
     {
-        AudioManager.Instance.Play("confetti");
+        AudioManager.Instance.Play("confetti", 0.3f);
         ParticleManager.Instance.Spawn("confetti", Ability.Instance.transform.position);
     }
     private void StartFade()

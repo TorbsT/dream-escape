@@ -32,11 +32,12 @@ public class MusicSystem : MonoBehaviour
         float REDvolume = progress;
         float BLUvolume = 1f - progress;
         float pitch = Mathf.Lerp(BLUpitch, REDpitch, progress);
-        
+
+        float settingsMod = PauseMenu.Instance.Master * PauseMenu.Instance.Music;
         BLUsource.pitch = pitch;
-        BLUsource.volume = BLUvolume;
+        BLUsource.volume = BLUvolume * settingsMod;
         REDsource.pitch = pitch;
-        REDsource.volume = REDvolume;
+        REDsource.volume = REDvolume * settingsMod;
     }
     public void UsedAbility(bool RED, bool initial)
     {

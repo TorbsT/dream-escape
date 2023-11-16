@@ -63,4 +63,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d094b9d300d6e684fa937cca3a4645f5, type: 3}
   - name: footstep5
     clip: {fileID: 8300000, guid: bb08577d49fae6b43a27723458b4cc73, type: 3}
+  - name: impact
+    clip: {fileID: 8300000, guid: ebd8eddc1c44eee4a8a1819c9c953718, type: 3}
   prefab: {fileID: 25568470659617718, guid: 59d52f708b2403244934cd4ae5705726, type: 3}

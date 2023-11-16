@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class Ability : MonoBehaviour
 {
@@ -64,7 +63,7 @@ public class Ability : MonoBehaviour
         {
             ParticleManager.Instance.Spawn("lucid", Head.Instance.transform.position);
             TimeStop.Instance.Stop(0f);
-            AudioManager.Instance.Play($"lucid{timesUsed % 2}");
+            AudioManager.Instance.Play($"lucid{timesUsed % 2}", 0.25f);
             timesUsed++;
         }
 

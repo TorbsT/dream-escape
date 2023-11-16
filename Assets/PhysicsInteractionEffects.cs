@@ -33,6 +33,7 @@ public class PhysicsInteractionEffects : MonoBehaviour
     }
     private void Landed(float velY)
     {
-        AudioManager.Instance.PlayRandom(landSound, Mathf.Abs(velY) / landMaxVel);
+        Debug.Log("AAH");
+        AudioManager.Instance.PlayRandom(landSound, Mathf.Pow(Mathf.Abs(velY) / landMaxVel, 2f));
     }
 }
