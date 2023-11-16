@@ -47,3 +47,5 @@ MonoBehaviour:
   particles:
   - name: lucid
     prefab: {fileID: 6497753235301376073, guid: 467fad07a3cf4bb47acdfd2033ccdaa9, type: 3}
+  - name: confetti
+    prefab: {fileID: 59153670671627916, guid: 3ca9209342f4781439e6228a3af80f27, type: 3}

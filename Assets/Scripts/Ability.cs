@@ -64,10 +64,11 @@ public class Ability : MonoBehaviour
         {
             ParticleManager.Instance.Spawn("lucid", Head.Instance.transform.position);
             TimeStop.Instance.Stop(0f);
-            AudioManager.Instance.Spawn($"lucid{timesUsed % 2}");
+            AudioManager.Instance.Play($"lucid{timesUsed % 2}");
             timesUsed++;
         }
 
+        MusicSystem.Instance.UsedAbility(RED, initial);
         Used?.Invoke(RED, initial);
     }
     private void Update()

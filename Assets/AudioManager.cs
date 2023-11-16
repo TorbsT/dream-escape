@@ -23,8 +23,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource prefab;
     private List<LiveSound> liveSounds = new();
 
-    public void Spawn(string name) => Spawn(name, Vector2.zero);
-    public void Spawn(string name, Vector2 position)
+    public void PlayRandom(string name, float volume)
+    {
+        List<Sound> list = sounds.FindAll(x => x.name.StartsWith(name));
+        int i = UnityEngine.Random.Range(0, list.Count);
+        Play(list[i].name, volume);
+    }
+    public void Play(string name) => Play(name, 1f);
+    public void Play(string name, float volume) => Play(name, volume, Vector2.zero);
+    public void Play(string name, float volume, Vector2 position)
     {
         Sound p = sounds.Find(x => x.name == name);
         if (p == null)
@@ -37,6 +44,7 @@ public class AudioManager : MonoBehaviour
         AudioSource source = go.GetComponent<AudioSource>();
         AudioClip clip = p.clip;
         source.clip = clip;
+        source.volume = volume;
         if (clip == null) Debug.LogWarning($"{name} has null clip");
         LiveSound liveSound = new();
         liveSound.source = source;

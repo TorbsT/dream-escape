@@ -46,7 +46,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: lucid0
-    clip: {fileID: 8300000, guid: b83ff15a0da00de44808cf566a365bbb, type: 3}
+    clip: {fileID: 8300000, guid: 22217e77702afd44599229b9144afd0f, type: 3}
   - name: lucid1
-    clip: {fileID: 8300000, guid: 998c96ca84f554643b5f33a860b91d7c, type: 3}
+    clip: {fileID: 8300000, guid: 69b1a58d1c142b54eb70644b0f281322, type: 3}
+  - name: confetti
+    clip: {fileID: 8300000, guid: a1c55525466dbf241bfcd8f8f99f8a03, type: 3}
+  - name: footstep0
+    clip: {fileID: 8300000, guid: 3a335cb12b221e245beb2f39c399c3e2, type: 3}
+  - name: footstep1
+    clip: {fileID: 8300000, guid: 87096a43387098344a8fcd94c56b3359, type: 3}
+  - name: footstep2
+    clip: {fileID: 8300000, guid: 24a1d41bbb9edfe409683c6fd89919f0, type: 3}
+  - name: footstep3
+    clip: {fileID: 8300000, guid: 1c8812f2ea8db02478267173f6a27e07, type: 3}
+  - name: footstep4
+    clip: {fileID: 8300000, guid: d094b9d300d6e684fa937cca3a4645f5, type: 3}
+  - name: footstep5
+    clip: {fileID: 8300000, guid: bb08577d49fae6b43a27723458b4cc73, type: 3}
   prefab: {fileID: 25568470659617718, guid: 59d52f708b2403244934cd4ae5705726, type: 3}

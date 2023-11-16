@@ -238,6 +238,7 @@ public class characterJump : MonoBehaviour
         //Create the jump, provided we are on the ground, in coyote time, or have a double jump available
         if (onGround || (coyoteTimeCounter > 0.03f && coyoteTimeCounter < coyoteTime) || canJumpAgain)
         {
+            AudioManager.Instance.PlayRandom("footstep", 0.5f);
             desiredJump = false;
             jumpBufferCounter = 0;
             coyoteTimeCounter = 0;

@@ -653,6 +653,7 @@ GameObject:
   - component: {fileID: 331432468181952860}
   - component: {fileID: -8095294369206621041}
   - component: {fileID: 7282746535788720321}
+  - component: {fileID: 8654457102934606366}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1110,8 +1111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroys:
-  - {fileID: 5127293869447306154, guid: bf556424463d84b409f9a328109f9d53, type: 3}
   - {fileID: 5966476385181541201, guid: ad5fbfbd296da6b47b5d74965030c190, type: 3}
+  - {fileID: 2787056229612515319, guid: 9fd59706b96bd1647bd30a14e063f024, type: 3}
   doDestroys:
   - {fileID: 6383006238161285942, guid: 1a2d3ed30d3db624b864a97c371aea96, type: 3}
   - {fileID: 6240967154434721188, guid: 13fb9efb440d2204190aa337e0132d77, type: 3}
@@ -1120,6 +1121,7 @@ MonoBehaviour:
   - {fileID: 9198932689804783557, guid: 180c5f4101e8942498232ba0569067f0, type: 3}
   - {fileID: 7223396465829880834, guid: b93f5dd4c8d9e41488e088d6d82b8a00, type: 3}
   - {fileID: 6541312580604401253, guid: b07751794943837498e20518afec38be, type: 3}
+  - {fileID: 5127293869447306154, guid: bf556424463d84b409f9a328109f9d53, type: 3}
 --- !u!114 &7282746535788720321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,6 +1137,18 @@ MonoBehaviour:
   head: {fileID: 1199827872796182899}
   jumpVelocityBase: 5
   jumpVelocityScalar: 0.6
+--- !u!114 &8654457102934606366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290000963866917593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb05247989aefc4f9de799d5372a18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8656436712751763589
 GameObject:
   m_ObjectHideFlags: 0
