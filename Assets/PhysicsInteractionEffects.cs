@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PhysicsInteractionEffects : MonoBehaviour
 {
+    private bool IsPlayer => Ability.Instance.gameObject == gameObject;
     [SerializeField] private string landSound = "footstep";
     [SerializeField] private float landMaxVel = 37f;
-    [SerializeField] private string slideSound = "stoneslide";
+    //[SerializeField] private string slideSound = "stoneslide";
     [SerializeField] private float slideMaxVel = 1f;
 
     [SerializeField] private AudioSource slideSource;
@@ -33,7 +34,6 @@ public class PhysicsInteractionEffects : MonoBehaviour
     }
     private void Landed(float velY)
     {
-        Debug.Log("AAH");
         AudioManager.Instance.PlayRandom(landSound, Mathf.Pow(Mathf.Abs(velY) / landMaxVel, 2f));
     }
 }

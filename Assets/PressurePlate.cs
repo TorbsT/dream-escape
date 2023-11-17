@@ -34,6 +34,8 @@ public class PressurePlate : MonoBehaviour
         if (!Application.isPlaying) return;
         bool newActive = colls > 0;
         if (Active == newActive) return;
+        if (newActive) AudioManager.Instance.Play("pressureplate-on");
+        else  AudioManager.Instance.Play("pressureplate-off");
         foreach (var r in Receivers)
         {
             r.Trigger(gameObject, newActive);

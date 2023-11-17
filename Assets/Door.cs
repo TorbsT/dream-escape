@@ -36,6 +36,7 @@ public class Door : MonoBehaviour
     }
     private void StartFade()
     {
-        Dunkhelheit.Instance.FadeTo(leadsTo);
+        Dunkelheit.Instance.FadeTo(leadsTo);
+        ZoomyBoy.Instance.StartExit();
     }
 }

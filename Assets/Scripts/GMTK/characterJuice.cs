@@ -43,12 +43,13 @@ public class characterJuice : MonoBehaviour
     public bool squeezing;
     public bool jumpSqueezing;
     public bool landSqueezing;
-    public bool playerGrounded;
+    public bool playerGrounded = true;
 
     [Header("Platformer Toolkit Stuff")]
     [SerializeField] bool showJumpLine;
     [SerializeField] jumpTester jumpLine;
     public bool cameraFalling = false;
+    private float life;
 
     void Start()
     {
@@ -58,6 +59,7 @@ public class characterJuice : MonoBehaviour
 
     void Update()
     {
+        life += Time.deltaTime;
         tiltCharacter();
 
         //We need to change the character's running animation to suit their current speed
@@ -104,7 +106,8 @@ public class characterJuice : MonoBehaviour
             //landParticles.Play();
 
             //Start the landing squash and stretch coroutine.
-            if (!landSqueezing && landSqueezeMultiplier > 1)
+            if (!landSqueezing && landSqueezeMultiplier > 1
+                && life > 0.5f)
             {
                 StartCoroutine(JumpSqueeze(landSquashSettings.x * landSqueezeMultiplier, landSquashSettings.y / landSqueezeMultiplier, landSquashSettings.z, landDrop, false));
             }

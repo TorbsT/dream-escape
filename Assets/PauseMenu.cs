@@ -20,14 +20,18 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider musicSlider;
-    [SerializeField] private float minVolume = -100f;
 
     public void Show() => SetActive(true);
     public void Hide() => SetActive(false);
-    public void SetActive(bool value) => pauseMenu.SetActive(value);
+    public void SetActive(bool value, bool doSound = true)
+    {
+        string soundName = value ? "pause0" : "pause1";
+        if (doSound) AudioManager.Instance.Play(soundName);
+        pauseMenu.SetActive(value);
+    }
     public void SelectLevel(GameObject levelGO)
     {
-        SceneManager.LoadScene(levelGO.name);
+        Dunkelheit.Instance.FadeTo(levelGO.name);
     }
     public void SetMasterVolume(float volume)
     {
@@ -45,7 +49,7 @@ public class PauseMenu : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        Hide();
+        SetActive(false, false);
         masterSlider.value = settings.MasterVolume;
         musicSlider.value = settings.MusicVolume;
         sfxSlider.value = settings.SFXVolume;

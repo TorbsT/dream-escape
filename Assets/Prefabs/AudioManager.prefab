@@ -65,4 +65,16 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: bb08577d49fae6b43a27723458b4cc73, type: 3}
   - name: impact
     clip: {fileID: 8300000, guid: ebd8eddc1c44eee4a8a1819c9c953718, type: 3}
+  - name: pressureplate-off
+    clip: {fileID: 8300000, guid: c4f05fb65aeff5f42a57e726df3ef291, type: 3}
+  - name: pressureplate-on
+    clip: {fileID: 8300000, guid: f2a8d48d5e1f1314ca05170d956f5786, type: 3}
+  - name: lever
+    clip: {fileID: 8300000, guid: b12984143bdd23e4481bbd2971a297b8, type: 3}
+  - name: uibutton
+    clip: {fileID: 8300000, guid: bd8b340c9565f63439b303745be847a4, type: 3}
+  - name: pause0
+    clip: {fileID: 8300000, guid: 0b540cd731aa3354a8d7e1b2a9e89620, type: 3}
+  - name: pause1
+    clip: {fileID: 8300000, guid: 8e9f9d8f2e92b6d4fa8544d4ed5ea81e, type: 3}
   prefab: {fileID: 25568470659617718, guid: 59d52f708b2403244934cd4ae5705726, type: 3}

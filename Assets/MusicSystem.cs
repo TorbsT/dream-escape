@@ -14,9 +14,19 @@ public class MusicSystem : MonoBehaviour
     private float goal = 1f;
     [SerializeField] private AudioSource BLUsource;
     [SerializeField] private AudioSource REDsource;
+    [SerializeField] private AudioReverbPreset REDreverb;
+    [SerializeField] private AudioReverbPreset BLUreverb;
+    private AudioReverbZone zone;
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
         Instance = this;
+        zone = GetComponent<AudioReverbZone>();
         goal = 0f;
         progress = goal;
     }
@@ -42,5 +52,6 @@ public class MusicSystem : MonoBehaviour
     public void UsedAbility(bool RED, bool initial)
     {
         goal = RED ? 0f : 1f;
+        zone.reverbPreset = RED ? BLUreverb : REDreverb;
     }
 }

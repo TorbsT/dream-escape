@@ -33,6 +33,7 @@ public class AudioManager : MonoBehaviour
     public void Play(string name, float volume) => Play(name, volume, Vector2.zero);
     public void Play(string name, float volume, Vector2 position)
     {
+        if (!Application.isPlaying) return;
         Sound p = sounds.Find(x => x.name == name);
         if (p == null)
         {

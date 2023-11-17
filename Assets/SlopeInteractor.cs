@@ -9,7 +9,7 @@ public class SlopeInteractor : MonoBehaviour
     [SerializeField] private Vector2 colliderSize;
     [SerializeField] private float slopeDownAngleOld;
     [SerializeField] private float slopeCheckDistance;
-    [SerializeField] private bool isOnSlope;
+    //[SerializeField] private bool isOnSlope;
     [SerializeField] private LayerMask whatIsGround;
 
     private void Start()
@@ -31,8 +31,8 @@ public class SlopeInteractor : MonoBehaviour
         slopeNormalPerp = Vector2.Perpendicular(hit.normal);
         slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
 
-        if (slopeDownAngle != slopeDownAngleOld)
-            isOnSlope = true;
+        //if (slopeDownAngle != slopeDownAngleOld)
+        //    isOnSlope = true;
 
         slopeDownAngleOld = slopeDownAngle;
 

@@ -6,13 +6,11 @@ using UnityEngine.UI;
 public class PowerMenu : MonoBehaviour
 {
     [SerializeField] private GameObject powerMenu;
-    [SerializeField] private GameObject noMoreUsesText;
     private int usesLeft = 2;
     private void OnEnable()
     {
         Ability.Instance.Used += UsedPower;
         Ability.Instance.FailedUse += FailedUse;
-        noMoreUsesText.SetActive(false);
         Refresh();
     }
     private void OnDisable()
@@ -22,7 +20,7 @@ public class PowerMenu : MonoBehaviour
     }
     private void FailedUse()
     {
-        noMoreUsesText.SetActive(true);
+        //DialogManager.Instance.OutOfPowerUses();
     }
     private void UsedPower(bool RED, bool initial)
     {

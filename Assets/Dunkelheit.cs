@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Dunkhelheit : MonoBehaviour
+public class Dunkelheit : MonoBehaviour
 {
-    public static Dunkhelheit Instance { get; private set; }
+    public static Dunkelheit Instance { get; private set; }
     enum Mode
     {
         Idle,
@@ -30,7 +30,6 @@ public class Dunkhelheit : MonoBehaviour
     {
         if (!enabled) return;
         Instance = this;
-        Debug.Log("This does not happen");
         dunkelheit.gameObject.SetActive(true);
         mode = Mode.FadeIn;
         vis = 1f;

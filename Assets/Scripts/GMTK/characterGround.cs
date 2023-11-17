@@ -7,7 +7,7 @@ public class characterGround : MonoBehaviour
 {
 
     public event Action<float> Landed;
-    private bool onGround;
+    private bool onGround = true;
        
     [Header("Collider Settings")]
     [SerializeField][Tooltip("Length of the ground-checking collider")] private float groundLength = 0.95f;

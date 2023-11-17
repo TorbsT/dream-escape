@@ -1113,6 +1113,7 @@ MonoBehaviour:
   dontDestroys:
   - {fileID: 5966476385181541201, guid: ad5fbfbd296da6b47b5d74965030c190, type: 3}
   - {fileID: 2787056229612515319, guid: 9fd59706b96bd1647bd30a14e063f024, type: 3}
+  - {fileID: 167020491576026086, guid: ba706a297dec7004abc0473501d6aad2, type: 3}
   doDestroys:
   - {fileID: 6383006238161285942, guid: 1a2d3ed30d3db624b864a97c371aea96, type: 3}
   - {fileID: 6240967154434721188, guid: 13fb9efb440d2204190aa337e0132d77, type: 3}
@@ -1149,6 +1150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb05247989aefc4f9de799d5372a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  landSound: footstep
+  landMaxVel: 37
+  slideSound: stoneslide
+  slideMaxVel: 1
+  slideSource: {fileID: 0}
 --- !u!1 &8656436712751763589
 GameObject:
   m_ObjectHideFlags: 0

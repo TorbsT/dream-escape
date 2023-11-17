@@ -23,6 +23,7 @@ public class Key : MonoBehaviour
         //Invoke(nameof(Reactivate), 1.5f);
         TimeStop.Instance.Stop(0f);
         CameraManager.Instance.Shake(CameraManager.Instance.LeverPreset);
+        AudioManager.Instance.Play("lever");
         gameObject.SetActive(false);
     }
     private void Reactivate()

@@ -9,6 +9,7 @@ public class Ability : MonoBehaviour
     public static Ability Instance { get; private set; }
     public event Action<bool, bool> Used;
     public event Action FailedUse;
+    public bool HasFailedUse { get; private set; }
     [field: SerializeField] public bool RED { get; private set; }
     [field: SerializeField] public Color REDColor { get; private set; } = Color.red;
     [field: SerializeField] public Color BLUColor { get; private set; } = Color.cyan;
@@ -39,6 +40,7 @@ public class Ability : MonoBehaviour
         if (timesUsed >= 2)
         {
             FailedUse?.Invoke();
+            HasFailedUse = true;
             return;
         }
 
