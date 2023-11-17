@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 6405358433150551425}
   m_Layer: 0
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ratio: 0.8
+  ignoreIfPlayerTooHigh: 1
 --- !u!114 &3774247208380911021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +296,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   landSound: impact
   landMaxVel: 13
-  slideSound: stoneslide
   slideMaxVel: 10
   slideSource: {fileID: 6405358433150551425}
 --- !u!82 &6405358433150551425

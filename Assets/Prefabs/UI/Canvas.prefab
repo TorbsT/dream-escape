@@ -1442,9 +1442,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77ee342c14ecb6469534ba3018960aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <DialogLife>k__BackingField: 0
   bg: {fileID: 7139004369454271444}
   dialog: {fileID: 4939690975351637367}
-  fadeDuration: 0.5
+  fadeDuration: 0.3
+  betweenDialogDuration: 0.1
   fadeCurve:
     serializedVersion: 2
     m_Curve:

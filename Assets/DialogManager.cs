@@ -19,8 +19,12 @@ public class DialogManager : MonoBehaviour
     private float progress;
     private float betweenDialogProgress;
     private bool active;
+    private HashSet<string> triggers = new();
 
     private DialogState state;
+    public void Trigger(string name) => triggers.Add(name);
+    public void Untrigger(string name) => triggers.Remove(name);
+    public bool HasTrigger(string name) => triggers.Contains(name);
     public void SetStartDialogState(DialogState state)
     {
         this.state = state;
@@ -31,8 +35,6 @@ public class DialogManager : MonoBehaviour
     }
     private void Update()
     {
-        if (state == null) return;
-
         float db = Time.unscaledDeltaTime / betweenDialogDuration;
         if (progress <= 0f) betweenDialogProgress += db;
         if (betweenDialogProgress >= 1f && state != null)
@@ -43,7 +45,7 @@ public class DialogManager : MonoBehaviour
         }
 
         float d = Time.unscaledDeltaTime/fadeDuration;
-        if (active && state.dialogMessage != null) progress += d;
+        if (active && state != null && state.dialogMessage != null) progress += d;
         else progress -= d;
         progress = Mathf.Clamp(progress, 0.0f, 1.0f);
 
@@ -56,11 +58,14 @@ public class DialogManager : MonoBehaviour
         dialog.color = new(1f, 1f, 1f, curveProgress);
         bg.color = new(0f, 0f, 0f, curveProgress);
 
-        DialogState newState = state.Check();
-        if (newState != null && (progress == 0f || progress == 1f))
+        if (state != null)
         {
-            active = false;
-            state = newState;
+            DialogState newState = state.Check();
+            if (newState != null && (progress == 0f || progress == 1f))
+            {
+                active = false;
+                state = newState;
+            }
         }
     }
 }

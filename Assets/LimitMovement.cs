@@ -5,6 +5,7 @@ using UnityEngine;
 public class LimitMovement : MonoBehaviour
 {
     [SerializeField, Range(0f, 1f)] private float ratio = 0.8f;
+    [SerializeField] private bool ignoreIfPlayerTooHigh = true;
     private bool collidingWithPlayer = false;
     private Rigidbody2D rb;
 
@@ -28,7 +29,8 @@ public class LimitMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!collidingWithPlayer)
+        if (!collidingWithPlayer ||
+            (ignoreIfPlayerTooHigh && Feet.Instance.transform.position.y > transform.position.y))
         {
             rb.velocity = new(rb.velocity.x * ratio, rb.velocity.y);
         }
