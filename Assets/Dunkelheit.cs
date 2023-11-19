@@ -22,9 +22,13 @@ public class Dunkelheit : MonoBehaviour
     Mode mode;
     public void FadeTo(string levelName)
     {
+        if (gameObject.scene.name.StartsWith("Level"))
+            DialogManager.Instance.RememberState();
         dunkelheit.gameObject.SetActive(true);
         loadToScene = levelName;
         mode = Mode.FadeOut;
+
+
     }
     private void Awake()
     {
@@ -33,6 +37,12 @@ public class Dunkelheit : MonoBehaviour
         dunkelheit.gameObject.SetActive(true);
         mode = Mode.FadeIn;
         vis = 1f;
+    }
+    private void Start()
+    {
+        string sceneName = gameObject.scene.name;
+        if (sceneName.StartsWith("Level") && Memory.Instance != null)
+            Memory.Instance.HighestLevel = Mathf.Max(Memory.Instance.HighestLevel, int.Parse(sceneName[5..]));
     }
     private void Update()
     {

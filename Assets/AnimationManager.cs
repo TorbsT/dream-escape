@@ -11,13 +11,16 @@ public class AnimationManager : MonoBehaviour
     private characterJump jump;
 
     [SerializeField] private Transform head;
+    [SerializeField] private ParticleSystem smokeParticles;
     [SerializeField] private float jumpVelocityBase = 1f;
     [SerializeField] private float jumpVelocityScalar = 1f;
     private Vector2 baseHeadPos;
+    private Collider2D headColl;
     private Rigidbody2D rb;
     private Rigidbody2D headRb;
     private bool awaitHeadBounce;
     private float timeOut;
+    private bool prevComet;
 
     private void Awake()
     {
@@ -26,12 +29,14 @@ public class AnimationManager : MonoBehaviour
         movement = GetComponent<characterMovement>();
         rb = GetComponent<Rigidbody2D>();
         headRb = head.GetComponent<Rigidbody2D>();
+        headColl = head.GetComponent<Collider2D>();
     }
 
     private void OnEnable()
     {
         jump = GetComponent<characterJump>();
         jump.Jumped += Jumped;
+        smokeParticles.Stop();
     }
     private void OnDisable()
     {
@@ -49,18 +54,25 @@ public class AnimationManager : MonoBehaviour
     private void FixedUpdate()
     {
         float y = head.transform.localPosition.y - baseHeadPos.y;
+
+        bool headComet = timeOut > 1f;
+        if (headComet != prevComet)
+        {
+            headColl.enabled = !headComet;
+            if (headComet) smokeParticles.Play();
+            else smokeParticles.Stop();
+            if (headComet) AudioManager.Instance.Play("headcomet", 0.5f);
+        }
+        prevComet = headComet;
+        
+
         if (y <= 0f)
         {
             headRb.velocityY = Mathf.Max(0f, headRb.velocityY);
         }
-        if (y >= 0.1f && Mathf.Abs(headRb.velocityY) <= 0.01f)
+        if (y >= 0.1f && (headComet || Mathf.Abs(headRb.velocityY) <= 0.01f))
         {
             timeOut += Time.fixedDeltaTime;
-            if (timeOut >= 1f)
-            {
-                head.localPosition = baseHeadPos;
-                timeOut = 0f;
-            }
         }
         else timeOut = 0f;
         Bounce();

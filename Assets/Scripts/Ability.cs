@@ -13,7 +13,8 @@ public class Ability : MonoBehaviour
     [field: SerializeField] public bool RED { get; private set; }
     [field: SerializeField] public Color REDColor { get; private set; } = Color.red;
     [field: SerializeField] public Color BLUColor { get; private set; } = Color.cyan;
-    private int timesUsed = 0;
+
+    public int TimesUsed { get; private set; } = 0;
     private float timeSinceAbility;
     private List<AudioSource> audios = new();
 
@@ -37,7 +38,7 @@ public class Ability : MonoBehaviour
     }
     public void UseAbility(bool initial = false)
     {
-        if (timesUsed >= 2)
+        if (TimesUsed >= 2)
         {
             FailedUse?.Invoke();
             HasFailedUse = true;
@@ -65,8 +66,8 @@ public class Ability : MonoBehaviour
         {
             ParticleManager.Instance.Spawn("lucid", Head.Instance.transform.position);
             TimeStop.Instance.Stop(0f);
-            AudioManager.Instance.Play($"lucid{timesUsed % 2}", 0.25f);
-            timesUsed++;
+            AudioManager.Instance.Play($"lucid{TimesUsed % 2}", 0.25f);
+            TimesUsed++;
         }
 
         MusicSystem.Instance.UsedAbility(RED, initial);

@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db2381b67064a5458ddb20d02abef72, type: 3}
+  m_Name: Treasury
+  m_EditorClassIdentifier: 
+  <Text>k__BackingField: your favorite socks; the TV remote; your secret cookie stash;
+    the neighbor's garden gnome; your left shoe; a jar of fireflies; the town's prized
+    rubber chicken; your collection of rare rubber ducks; the mayor's hat; your prized
+    collection of mismatched socks; the doorknob from your front door; a cloud-shaped
+    pillow; your grandma's famous meatball recipe; the town's welcome sign; a mysterious
+    map to nowhere; your collection of funny-shaped pasta; the town's oldest rubber
+    band; the moon (temporarily); your toaster; a pair of invisible glasses; the
+    town's backup supply of laughter; your collection of antique kazoo music sheets;
+    the concept of time; your favorite pen; the town's rumor mill; your shadow (borrowed,
+    not stolen); the local weather vane; your reflection in the mirror; the town's
+    prized whoopee cushion; your collection of bubble wrap; the laughter from your
+    favorite sitcom; the town's collection of puns; your pet rock; the concept of
+    gravity; your alarm clock; the town's big red button (that nobody knew what it
+    did); your collection of expired coupons; the mayor's favorite rubber ducky;
+    the town's enthusiasm; your sense of direction; the local cat's meow; your lucky
+    charm; the town's imaginary friend; your collection of imaginary friends; the
+    town's WiFi password; your favorite daydream; the town's collective memory of
+    yesterday; your backup dance moves; the town's backup plan; your favorite cloud;
+    the town's ability to keep a secret; your collection of invisible trophies; the
+    town's backup laughter track; your ability to resist dad jokes; the town's collection
+    of forgotten dreams; your favorite bad pun; the town's backup supply of good
+    vibes; your collection of stolen moments; the town's backup sunshine; your backup
+    backup plan; the town's backup collection of rubber chickens; your secret handshake;
+    the town's backup supply of good karma; your ability to whistle; the town's backup
+    supply of high-fives; your favorite conspiracy theory; the town's backup plan
+    for a zombie apocalypse; your collection of imaginary enemies; the town's backup
+    supply of good luck; your lucky penny; the town's backup supply of bad luck;
+    your favorite dance move; the town's backup supply of backup plans; your sense
+    of humor; the town's backup collection of dad jokes; a glittery toilet seat;
+    a pet rock; a pair of invisible gloves; a glow-in-the-dark hula hoop; a talking
+    pineapple-shaped alarm clock; a rubber chicken-shaped slippers; a whoopee cushion
+    cushion (a cushion that makes whoopee cushion sounds); a magic wand that changes
+    your hair color with a wave; a pair of socks with built-in heaters; a pillow
+    with a built-in snoring sound; a levitating donut-shaped pillow; a jar of sunshine
+    (it's just really bright yellow paint); a rubber ducky-shaped soap dispenser;
+    a kazoo with a built-in applause track; a penguin-shaped backpack that waddles
+    when you walk; a pair of roller skates with built-in GPS; a bubble wrap suit
+    for your pet; a disco ball disco ball (a smaller disco ball inside a larger one);
+    a talking sock puppet that gives life advice; a pineapple-shaped backpack filled
+    with pineapples; a jigsaw puzzle with moving pieces; a pair of earmuffs that
+    play soothing ocean sounds; a rubber chicken-shaped travel pillow; a whoopee
+    cushion orchestra conductor's baton; a magic eight ball that predicts your dreams;
+    a pair of sunglasses that make everything look pixelated; a dancing cactus-shaped
+    water bottle; a pocket-sized fog machine for dramatic entrances; a balloon animal
+    zoo (inflatable balloon animals of various species); a kazoo that plays your
+    favorite song when you hum it; a rubber chicken-shaped mug; a whoopee cushion
+    throne with a built-in massage feature; a magic carpet made of bubble wrap; a
+    pair of roller skates with built-in cup holders; a disco ball disco ball disco
+    ball (three disco balls nested inside each other); a talking pineapple-shaped
+    disco ball; a levitating pillow; a jar of laughter (it's actually just a recording
+    of laughter); a rubber ducky-shaped bathrobe; a kazoo with a built-in echo chamber;
+    a pair of socks that never need washing; a pillow that plays lullabies when you
+    hug it; a whoopee cushion-shaped beach ball; a magic wand that turns water into
+    confetti; a pair of sunglasses that make everything look like a black-and-white
+    movie; a disco ball disco ball disco ball disco ball (four disco balls nested
+    inside each other); a talking pineapple-shaped whoopee cushion; a rubber chicken-shaped
+    beach umbrella; a kazoo orchestra playing your favorite song; a pair of roller
+    skates with built-in mini speakers; a bubble wrap onesie; a jar of imaginary
+    friends; a magic eight ball that speaks in rhymes; a pair of earmuffs that play
+    bird songs; a rubber chicken-shaped laptop sleeve; a whoopee cushion orchestra
+    playing classical music; a magic carpet made of bubble wrap with a built-in fan;
+    a pair of sunglasses that make everything look like a 3D movie; a disco ball
+    disco ball disco ball disco ball disco ball (five disco balls nested inside each
+    other); a talking pineapple-shaped whoopee cushion throne; a rubber ducky-shaped
+    neck pillow; a kazoo with a built-in fireworks display; a pair of socks with
+    built-in air purifiers; a pillow that plays motivational speeches when you hug
+    it; a whoopee cushion-shaped trampoline; a magic wand that turns snow into confetti;
+    a pair of sunglasses that make everything look like a painting; a disco ball
+    disco ball disco ball disco ball disco ball disco ball (six disco balls nested
+    inside each other); a talking pineapple-shaped pillow; a rubber chicken-shaped
+    sleeping bag; a kazoo orchestra playing rock and roll; a pair of roller skates
+    with built-in light show; a bubble wrap parachute; a jar of invisible ink; a
+    magic eight ball that tells jokes; a pair of earmuffs that play uplifting quotes;
+    a rubber chicken-shaped lunchbox; a whoopee cushion throne with a built-in karaoke
+    machine; a magic carpet made of bubble wrap with a built-in bubble blower; a
+    pair of sunglasses that make everything look like a watercolor painting; a disco
+    ball disco ball disco ball disco ball disco ball disco ball (seven disco balls
+    nested inside each other); a talking pineapple-shaped whoopee cushion throne;
+    a rubber ducky-shaped backpack; a kazoo with a built-in foghorn; a pair of socks
+    with built-in foot massagers; a pillow that plays comedy shows when you hug it;
+    a whoopee cushion-shaped hot air balloon; a magic wand that turns fog into confetti;
+    a pair of sunglasses that make everything look like a kaleidoscope; a rubber
+    ducky-shaped blanket; a kazoo with a built-in laser light show; a talking pineapple-shaped
+    pillow speaker; a rubber chicken-shaped laptop stand; a jar of imaginary ice
+    cream; a pair of roller skates with built-in fireworks display; a bubble wrap
+    maze; a whoopee cushion-shaped rocket; a magic eight ball that speaks in riddles;
+    a pair of earmuffs that play space-themed music; a rubber chicken-shaped mouse
+    pad; a talking sock puppet-shaped pillow; a disco ball disco ball disco ball
+    disco ball disco ball disco ball (eight disco balls nested inside each other);
+    a pair of socks with built-in mood lighting; a pillow that plays comedy shows
+    when you hug it; a whoopee cushion-shaped pool float; a magic wand that turns
+    rain into confetti; a pair of sunglasses that make everything look like a comic
+    book; a disco ball disco ball disco ball disco ball disco ball disco ball disco
+    ball disco ball disco ball disco ball (ten disco balls nested inside each other);
+    a squawking rubber duck umbrella; a pair of levitating marshmallows; a talking
+    spaghetti-strand scarf; a glow-in-the-dark pickle jar; a roller skate pizza cutter;
+    a pocket-sized pogo stick; a sentient jigsaw puzzle; a hat with a built-in mood
+    ring; a self-dancing cactus plant; a bubble-wrap suit of armor; a harmonica-playing
+    sloth figurine; a trombone-shaped snorkel; a plant that grows chocolate-covered
+    pretzels; a pair of mismatched flip-flops for penguins; an inflatable armchair
+    that inflates itself; a pillow-shaped cloud with a built-in lightning show; a
+    floating taco-shaped hot air balloon; a snorkeling snorkel (a snorkel for your
+    snorkel); a cheese-scented air freshener that smells like victory; a jar of invisible
+    marbles; a kazoo-proof fortress; a pair of sunglasses that make everything look
+    like a silent movie; a rubber ducky-shaped hoverboard; a self-folding origami
+    lawn chair; a levitating watermelon; a cookie jar with an anti-gravity field;
+    a whoopee cushion-powered skateboard; a magic eight-ball that answers in interpretive
+    dance; a talking donut-shaped frisbee; a levitating penguin-shaped water bottle;
+    a bubble wrap parachute for action figures; a pocket-sized fog machine for miniature
+    dramatic entrances; a jar of invisible laughter bubbles; a plant that grows gummy
+    bears; a slinky that defies the laws of gravity; an invisible accordion; a squishy
+    blob-shaped stress ball; a pair of levitating slippers; a kazoo-proof invisibility
+    cloak; a rubber chicken-shaped boomerang; a pillow that whispers motivational
+    quotes; a floating cloud-shaped pillow with a built-in lullaby; a pair of roller
+    skates with built-in rocket boosters; a puzzle ball with invisible pieces; a
+    balloon animal farm (inflatable balloon animals of various farm animals); a talking
+    potato-shaped pillow; a jar of imaginary chocolate-covered strawberries; a rubber
+    ducky-shaped blanket fort; a floating pizza slice-shaped pool float; a whoopee
+    cushion-proof beanbag chair; a magic mirror that compliments your outfit; a pair
+    of sunglasses that make everything look like a flipbook animation; a disco ball
+    helmet for cats; a levitating taco-shaped wallet; a jar of imaginary pizza slices;
+    a kazoo-proof catapult; a rubber chicken-shaped pogo stick; a pillow that plays
+    ambient whale sounds; a pair of levitating earmuffs; a talking pineapple-shaped
+    backpack with a built-in weather forecast; a bubble wrap castle for action figures;
+    a pocket-sized foghorn for ants; a plant that grows rainbow-colored marshmallows;
+    a slinky that plays your favorite song; an invisible trampoline; a squishy blob-shaped
+    pillow; a pair of levitating roller skates; a kazoo-proof telescope; a rubber
+    ducky-shaped spaceship; a jar of imaginary unicorns; a floating ice cream cone-shaped
+    hot air balloon; a whoopee cushion-proof hammock; a magic mirror that tells dad
+    jokes; a pair of sunglasses that make everything look like a pixelated video
+    game; a disco ball helmet for dogs; a levitating burrito-shaped pillow; a talking
+    spaghetti-strand jump rope; a bubble wrap maze for hamsters; a pocket-sized fog
+    machine for pocket-sized adventures; a plant that grows miniature tacos; a slinky
+    that doubles as a spaghetti noodle; an invisible unicycle; a squishy blob-shaped
+    beanbag chair; a pair of levitating sunglasses; a kazoo-proof snorkel for giraffes;
+    a rubber chicken-shaped ladder; a pillow that transforms into a taco; a floating
+    cupcake-shaped pool float; a whoopee cushion-proof trampoline; a magic mirror
+    that predicts your dreams; a pair of sunglasses that make everything look like
+    a watercolor painting in a thunderstorm; a disco ball helmet for goldfish; a
+    levitating sushi-shaped pillow; a talking spaghetti-strand jump rope; a bubble
+    wrap maze for hamsters; a pocket-sized fog machine for pocket-sized adventures;
+    a plant that grows miniature tacos; a slinky that doubles as a spaghetti noodle;
+    an invisible unicycle; a squishy blob-shaped beanbag chair; a pair of levitating
+    sunglasses; a kazoo-proof snorkel for giraffes; a rubber chicken-shaped ladder;
+    a pillow that transforms into a taco; a floating cupcake-shaped pool float; a
+    whoopee cushion-proof trampoline; a magic mirror that predicts your dreams; a
+    pair of sunglasses that make everything look like a watercolor painting in a
+    thunderstorm; a disco ball helmet for goldfish; a levitating sushi-shaped pillow

@@ -58,6 +58,7 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        if (Instance != null) Destroy(gameObject);
     }
     private void Update()
     {

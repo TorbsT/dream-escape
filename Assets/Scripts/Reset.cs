@@ -10,7 +10,7 @@ public class Reset : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(gameObject.scene.name);
+        Dunkelheit.Instance.FadeTo(gameObject.scene.name);
     }
 
     private void Awake()
@@ -20,6 +20,8 @@ public class Reset : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
+        {
             Restart();
+        }
     }
 }

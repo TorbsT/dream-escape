@@ -21,13 +21,63 @@ public class DialogManager : MonoBehaviour
     private bool active;
     private HashSet<string> triggers = new();
 
+    private List<DialogState> history = new();
     private DialogState state;
+    private DialogState startState;
     public void Trigger(string name) => triggers.Add(name);
     public void Untrigger(string name) => triggers.Remove(name);
     public bool HasTrigger(string name) => triggers.Contains(name);
+    public void RememberState()
+    {
+        string currentId = state.recoveryId;
+        string availableId = currentId;
+        while (availableId == null)
+        {
+            if (history.Count == 0) break;
+            availableId = history[^1].recoveryId;
+            history.RemoveAt(history.Count-1);
+        }
+        if (availableId == null)
+            Debug.Log("Could not remember the id of " + state.dialogMessage);
+        else
+        {
+            Memory.Instance.RememberState(gameObject.scene.name, availableId);
+        }
+    }
     public void SetStartDialogState(DialogState state)
     {
-        this.state = state;
+        string previousId = Memory.Instance.GetState(gameObject.scene.name);
+        if (previousId == null)
+        {
+            this.state = state;
+            this.startState = state;
+        } else
+        {
+            HashSet<int> explored = new();
+            Queue<DialogState> statesToInvestigate = new();
+            DialogState current = state;
+            while (current.recoveryId != previousId)
+            {
+                Debug.Log(current.GetHashCode());
+                explored.Add(current.GetHashCode());
+                foreach (var next in current.GetTransitions())
+                {
+                    if (explored.Contains(next.NextState.GetHashCode()))
+                        continue;
+                    statesToInvestigate.Enqueue(next.NextState);
+                }
+                if (statesToInvestigate.Count == 0)
+                {
+                    current = null;
+                    break;
+                }
+                current = statesToInvestigate.Dequeue();
+            }
+            if (current == null)
+                Debug.LogWarning("Could not find recovery id " +previousId);
+            this.state = current;
+            this.startState = current;
+        }
     }
     private void Awake()
     {
@@ -40,7 +90,11 @@ public class DialogManager : MonoBehaviour
         if (betweenDialogProgress >= 1f && state != null)
         {
             active = true;
-            dialog.text = state.dialogMessage;
+            if (state.EnterAction != null)
+                state.EnterAction.Invoke();
+            if (state.dialogMessage != null)
+                dialog.text = Format(state.dialogMessage);
+            else dialog.text = null;
             betweenDialogProgress = 0f;
         }
 
@@ -49,7 +103,7 @@ public class DialogManager : MonoBehaviour
         else progress -= d;
         progress = Mathf.Clamp(progress, 0.0f, 1.0f);
 
-        if (progress >= 1f)
+        if (progress >= 1f || (state != null && state.dialogMessage == null))
             DialogLife += Time.unscaledDeltaTime;
         else
             DialogLife = 0f;
@@ -64,20 +118,37 @@ public class DialogManager : MonoBehaviour
             if (newState != null && (progress == 0f || progress == 1f))
             {
                 active = false;
+                history.Add(state);
                 state = newState;
             }
         }
     }
+    private string Format(string input)
+    {
+        string result = input.Replace("<i>", "<i angle=20>");
+        result = result.Replace("{good}", Memory.Instance.Treasury.GetRandom());
+        return result;
+    }
 }
 public class DialogState
 {
+    public string recoveryId;
     public string dialogMessage;
+    public Action EnterAction;
     private List<DialogTransition> transitions = new();
 
-    public DialogState(string message)
+    public DialogState(string message, bool remember = true)
     {
         dialogMessage = message;
+        if (remember)
+            recoveryId = message;
     }
+    public DialogState(string message, string recoveryId)
+    {
+        dialogMessage = message;
+        this.recoveryId = recoveryId;
+    }
+    public List<DialogTransition> GetTransitions() => transitions;
     public void AddTransition(Func<bool> condition, DialogState next)
         => AddTransition(new DialogTransition(condition, next));
     public void AddTransition(DialogTransition transition)
