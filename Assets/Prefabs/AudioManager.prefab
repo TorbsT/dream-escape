@@ -79,6 +79,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 8e9f9d8f2e92b6d4fa8544d4ed5ea81e, type: 3}
   - name: spawnblob
     clip: {fileID: 8300000, guid: 8e9f9d8f2e92b6d4fa8544d4ed5ea81e, type: 3}
+  - name: faillucid
+    clip: {fileID: 8300000, guid: 94397f41e589f514babb10ee35828c42, type: 3}
   - name: headcomet
     clip: {fileID: 8300000, guid: d3e90e2a37658374cb32199d23d7e692, type: 3}
   prefab: {fileID: 25568470659617718, guid: 59d52f708b2403244934cd4ae5705726, type: 3}

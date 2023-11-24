@@ -9,18 +9,17 @@ public class Treasury : ScriptableObject
     [field: SerializeField, TextArea] public string Text { get; private set; }
 
     private List<string> list = new();
-
-    public string GetRandom()
-    {
-        int index = Random.Range(0, list.Count);
-        return list[index];
-    }
-    public List<string> GetAll() => list;
-
-    private void OnValidate()
+    private void Awake()
     {
         list = new();
         foreach (var item in Text.Split("; "))
             list.Add(item);
     }
+    public string GetRandom()
+    {
+        if (list.Count == 0) return "";
+        int index = Random.Range(0, list.Count);
+        return list[index];
+    }
+    public List<string> GetAll() => list;
 }
