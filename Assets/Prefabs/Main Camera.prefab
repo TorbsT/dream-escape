@@ -59,6 +59,7 @@ MonoBehaviour:
   shaker: {fileID: 2297836501386213040}
   lucid0Preset: {fileID: 11400000, guid: 26a8c951e1739d64386c731797a6117a, type: 2}
   lucid1Preset: {fileID: 11400000, guid: a03b7a58cf2ab88408f1ec5b3951261e, type: 2}
+  lucidFailPreset: {fileID: 11400000, guid: 52653501bee2d804d923c370e146e26f, type: 2}
   deathPreset: {fileID: 11400000, guid: bd4328bd5427ab74383676e7049ce3d3, type: 2}
 --- !u!114 &8540990981100812064
 MonoBehaviour:

@@ -45,7 +45,7 @@ public class characterJump : MonoBehaviour
 
     [Header("Current State")]
     public bool canJumpAgain = false;
-    private bool desiredJump;
+    [SerializeField] private bool desiredJump;
     private float jumpBufferCounter;
     private float coyoteTimeCounter = 0;
     private bool pressingJump;

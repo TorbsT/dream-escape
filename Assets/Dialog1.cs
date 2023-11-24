@@ -26,14 +26,14 @@ public class Dialog1 : DialogLevel
     {
 
         DialogState initState = new(null, "init");
-        DialogState story1State = new("Welcome to your dream. I am Ann Tagonist, the one who has trapped you here.");
-        DialogState story2State = new("Do not try to escape. Please stay here forever.");
-        DialogState story3State = new("Do not move around by pressing [A] or [D].");
-        DialogState story4State = new("Do not jump by pressing [Space].");
-        DialogState story5State = new("And under no circumstances press [E] to lucid dream.");
-        DialogState story6State = new("Perhaps you misheard. I told you to press [E] under <i>no</i> circumstances, not <i>any</i>.");
+        DialogState story1State = new("Welcome to your dream. I am Ann Tagonist, the brilliant mind who graciously trapped you here.");
+        DialogState story2State = new("Do not try to escape. Why would you want to leave this delightful nightmare? It's practically paradise.");
+        DialogState story3State = new("Do not move around by pressing [A] or [D]. I prefer my captives nice and stationary.");
+        DialogState story4State = new("Do not jump by pressing [Space]. We wouldn't want any unnecessary elevation in your excitement.");
+        DialogState story5State = new("And under no circumstances press [E] to lucid dream. I mean, who would want to escape my charming company?");
+        DialogState story6State = new("Perhaps you misheard. I told you to press [E] under <i>no</i> circumstances, not <i>any</i>. But of course, you're a rebel, aren't you?");
         DialogState story6NullState = new(null, "waitforsolve");
-        DialogState story7State = new("Do <i>not</i> go through that door.");
+        DialogState story7State = new("Do <i>not</i> go through that door. It's not a suggestion; it's an order. Disobey, and you'll regret it.");
         DialogState story8State = new(null, "storyend");
 
         initState.AddTransition(() => Life > 2f, story1State);
@@ -46,21 +46,21 @@ public class Dialog1 : DialogLevel
         story7State.AddTransition(() => Life > 10f, story8State);
 
 
-        DialogState rebelMoveState = new("Please sit still when I'm talking. You're being very rude.");
-        DialogState rebelMove2State = new("Thank you.");  // move3, story3
-        DialogState rebelMove3State = new("Fuck you.");  // story3
+        DialogState rebelMoveState = new("Please sit still when I'm talking. You're being very rude. I'm trying to impart my wisdom here, and you're just waltzing around.", false);
+        DialogState rebelMove2State = new("Thank you. You managed to follow a basic instruction. I'm touched.", false);  // move3, story3
+        DialogState rebelMove3State = new("...And then you immediately proceed to move again. How utterly unsurprising. Your ability to follow simple instructions is truly impressive.", false);  // story3
         story1State.AddTransition(() => !SittingStill && Life > 5f, rebelMoveState);
         story2State.AddTransition(() => !SittingStill, rebelMoveState);
-        rebelMoveState.AddTransition(() => Life > 4f && sitStillTimer > 2f, rebelMove2State);
-        rebelMove2State.AddTransition(() => Life > 5f, story3State);
+        rebelMoveState.AddTransition(() => Life > 5f && sitStillTimer > 3.5f, rebelMove2State);
+        rebelMove2State.AddTransition(() => Life > 7f, story3State);
         rebelMove2State.AddTransition(() => !SittingStill, rebelMove3State);
         rebelMove3State.AddTransition(() => Life > 5f, story3State);
 
 
-        DialogState rebelEState = new("Woah, how did you know you could do that? Don't do that again.");
+        DialogState rebelEState = new("Woah, how did you know you could do that? Don't do that again. This is my dream, not yours.", false);
         DialogState rebelE2State = new("Where was I...");
-        DialogState rebelE3State = new("I told you <i>not</i> to do that, is that so difficult to understand?");
-        DialogState rebelE4State = new("I forgot what I was about to say. You ruined my monologue.");  // story6null
+        DialogState rebelE3State = new("I told you <i>not</i> to do that, is that so difficult to understand? Maybe I should draw it in crayon for you.");
+        DialogState rebelE4State = new("I forgot what I was about to say. You ruined my monologue. This is why we can't have nice things in dreamland.");  // story6null
         rebelEState.AddTransition(() => Life > 5f, rebelE2State);
         rebelEState.AddTransition(() => TimesUsedPower >= 2, rebelE3State);
         rebelE2State.AddTransition(() => Life > 10f, rebelE4State);

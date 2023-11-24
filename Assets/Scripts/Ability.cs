@@ -40,6 +40,7 @@ public class Ability : MonoBehaviour
     {
         if (TimesUsed >= 2)
         {
+            AudioManager.Instance.Play($"faillucid", 0.45f);
             FailedUse?.Invoke();
             HasFailedUse = true;
             return;
@@ -66,7 +67,7 @@ public class Ability : MonoBehaviour
         {
             ParticleManager.Instance.Spawn("lucid", Head.Instance.transform.position);
             TimeStop.Instance.Stop(0f);
-            AudioManager.Instance.Play($"lucid{TimesUsed % 2}", 0.25f);
+            AudioManager.Instance.Play($"lucid{TimesUsed % 2}", 0.6f);
             TimesUsed++;
         }
 
