@@ -25,7 +25,7 @@ public class Dialog1 : DialogLevel
     void Start()
     {
 
-        DialogState initState = new(null, "init");
+        DialogState initState = new(null, "init");  // bwi'ish
         DialogState story1State = new("Welcome to your dream. I am Ann Tagonist, the brilliant mind who graciously trapped you here.");
         DialogState story2State = new("Do not try to escape. Why would you want to leave this delightful nightmare? It's practically paradise.");
         DialogState story3State = new("Do not move around by pressing [A] or [D]. I prefer my captives nice and stationary.");
@@ -45,7 +45,7 @@ public class Dialog1 : DialogLevel
         story6State.AddTransition(() => Life > 10f, story6NullState);
         story7State.AddTransition(() => Life > 10f, story8State);
 
-
+        // gen z player
         DialogState rebelMoveState = new("Please sit still when I'm talking. You're being very rude. I'm trying to impart my wisdom here, and you're just waltzing around.", false);
         DialogState rebelMove2State = new("Thank you. You managed to follow a basic instruction. I'm touched.", false);  // move3, story3
         DialogState rebelMove3State = new("...And then you immediately proceed to move again. How utterly unsurprising. Your ability to follow simple instructions is truly impressive.", false);  // story3
@@ -56,7 +56,7 @@ public class Dialog1 : DialogLevel
         rebelMove2State.AddTransition(() => !SittingStill, rebelMove3State);
         rebelMove3State.AddTransition(() => Life > 5f, story3State);
 
-
+        // smurf
         DialogState rebelEState = new("Woah, how did you know you could do that? Don't do that again. This is my dream, not yours.", false);
         DialogState rebelE2State = new("Where was I...");
         DialogState rebelE3State = new("I told you <i>not</i> to do that, is that so difficult to understand? Maybe I should draw it in crayon for you.");
@@ -69,7 +69,7 @@ public class Dialog1 : DialogLevel
         rebelE4State.AddTransition(() => Life > 10f, story6NullState);
 
 
-        // Add common transitions
+        // common transitions that are very common and stuff
         AddTransitionRange(() => HasUsedPower, rebelEState,
             initState, story1State, story2State, story3State, story4State,
             rebelMoveState, rebelMove2State, rebelMove3State);

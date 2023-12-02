@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -58,11 +58,12 @@ public class Dialog3 : DialogLevel
         gotchaState.AddTransition(() => Life > 10f, gotcha2State);
         gotcha2State.AddTransition(() => Life > 10f, gotcha3State);
         gotcha3State.AddTransition(() => Life > 10f, trueEndState);
-
+        
+        //todo amorgusコック
         DialogState itoldyouState = new("Bravo, JIJO, bravo! Look at you, the master escape artist, finding a way back up. A standing ovation is in order!", false);
         DialogState itoldyou2State = new("Oh, wait, what's this? You've locked yourself in a room now? Absolutely brilliant.", false);
         DialogState itoldyou3State = new("Clearly, I underestimated your problem-solving skills.", false);
-        DialogState itoldyou4State = new("And just in case you're considering clicking [R] to restart, well, go ahead � maybe it'll lead to an even more impressive outcome.", false);
+        DialogState itoldyou4State = new("And just in case you're considering clicking [R] to restart, well, go ahead – maybe it'll lead to an even more impressive outcome.", false);
         DialogState itoldyou5State = new("Enjoy your little room, JIJO. It's practically a penthouse, isn't it?", false);
         itoldyouState.AddTransition(() => Life > 10f, itoldyou2State);
         itoldyou2State.AddTransition(() => Life > 10f, itoldyou3State);
